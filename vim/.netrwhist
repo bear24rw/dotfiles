@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/tmp'
+let g:netrw_dirhist_2='/home/user/projects/led_table/code_examples/tlc5940arduino/Tlc5940Mux'
+let g:netrw_dirhist_3='/home/user/projects/led_table/code/launchpad_serial'
+let g:netrw_dirhist_4='/home/user/projects/android/andeng_test'
