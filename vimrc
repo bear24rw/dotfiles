@@ -66,24 +66,21 @@ set showmatch
 " write before hiding a buffer
 set autowrite
 
+" leave 4 lines on top or bottom when scrolling
+set scrolloff=4
+
 " allows hidden buffers to stay unsaved, but we do not want this, so comment
 " it out:
 "set hidden
 
-"set wmh=0
-
 " auto-detect the filetype
 filetype plugin indent on
-
-
-"highlight LineNr guibg=gray
 
 " Always show the menu, insert longest match
 set completeopt=menuone,longest
 
 " Expand the command line using tab
 set wildchar=<Tab>
-
 set wildmode=longest:full
 set wildmenu
 
@@ -95,11 +92,6 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
-let filetype_p = "pascal"
-let pascal_traditional=1
-let pascal_symbol_operator=1
-let pascal_no_functions=1
-
 let &titleold=getcwd()
 set titlestring=%t 
 
@@ -110,11 +102,6 @@ endif
 if &term == "screen" || &term == "screen-bce" || &term == "screen-256color" || &term == "xterm"
   set title
 endif
-
-nnoremap <silent> <F8> :TlistToggle<CR>
-let Tlist_Exit_OnlyWindow = 1     " exit if taglist is last window open
-let Tlist_Show_One_File = 1       " Only show tags for current buffer
-let Tlist_Enable_Fold_Column = 0  " no fold column (only showing one file)
 
 command WQ wq
 command Wq wq
@@ -136,8 +123,5 @@ set bg=dark
 colorscheme desert256
 "colorscheme xoria256
 
-set scrolloff=4
-
 let g:SuperTabDefaultCompletionType = "context"
 highlight Pmenu ctermbg=238 gui=bold
-
