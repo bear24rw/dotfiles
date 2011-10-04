@@ -44,4 +44,4 @@ else
 	PS1=$GREEN'\u@\h'$BLUE' \w'$YELLOW'$(__git_ps1)'$BLUE' \$ '$WHITE
 fi
 
-eval $( dircolors -b $HOME/LS_COLORS/LS_COLORS )
+eval $( dircolors -b $HOME/.ls_colors/LS_COLORS )
