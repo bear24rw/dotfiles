@@ -13,7 +13,10 @@ export PATH="/home/user/eagle-5.10.0/bin/:${PATH}"
 export LD_LIBRARY_PATH="/opt/cuda/sdk/C/lib:/usr/local/lib64:${LD_LIBRARY_PATH}"
 export LDPATH="/opt/cuda/sdk/C/lib:/usr/local/lib64:${LDPATH}"
 export PKG_CONFIG_PATH="/usr/local/lib64/pkgconfig:${PKG_CONFIG_PATH}"
-export TERM="xterm-256color"
+
+if [ $TERM = "xterm" ]; then
+    export TERM="xterm-256color"
+fi
 
 alias ssh_server='ssh pwner@durknation.gotdns.com -p69'
 alias ssh_router='ssh admin@router'
