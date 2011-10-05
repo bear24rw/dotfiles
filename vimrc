@@ -4,9 +4,6 @@ call pathogen#helptags()
 " Wrap too long lines
 set wrap
 
-" Allow cursor everywhere
-"set virtualedit=all
-
 " Tabs are 2 characters
 set tabstop=4
 
@@ -21,6 +18,9 @@ set expandtab
 " guess indentation
 set autoindent
 set smartindent
+
+" don't reset cursor to start of line when moving around
+set nostartofline
 
 " show line numbers
 set number
@@ -63,18 +63,25 @@ set showcmd
 " show matching braces
 set showmatch
 
-" write before hiding a buffer
-set autowrite
-
 " leave 4 lines on top or bottom when scrolling
 set scrolloff=4
 
-" allows hidden buffers to stay unsaved, but we do not want this, so comment
-" it out:
-"set hidden
+" when buffer is brought to foregroup, remember undo history and marks
+set hidden
 
 " auto-detect the filetype
 filetype plugin indent on
+
+set omnifunc=syntaxcomplete#Complete
+
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
+
 
 " Always show the menu, insert longest match
 set completeopt=menuone,longest
@@ -103,12 +110,27 @@ if &term == "screen" || &term == "screen-bce" || &term == "screen-256color" || &
   set title
 endif
 
+" faster split resizing
+if bufwinnr(1)
+    map + <C-W>+
+    map - <C-W>-
+endif
+
+" better split switching
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
 command WQ wq
 command Wq wq
 command W w
 command Q q
 
 imap jj <ESC>  
+
+" yank from cursor to end of line
+nnoremap Y y$
 
 " syntax highlight
 syntax on
@@ -123,5 +145,9 @@ set bg=dark
 colorscheme desert256
 "colorscheme xoria256
 
+
 let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabLongestEnhanced = 1
+let g:SuperTabLongestHighlight = 1
+
 highlight Pmenu ctermbg=238 gui=bold
