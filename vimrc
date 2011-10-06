@@ -142,7 +142,9 @@ set t_Co=256
 set bg=dark
                
 " some nice color schemes
-colorscheme desert256
+let g:solarized_termcolors=256
+colorscheme solarized
+"colorscheme desert256
 "colorscheme xoria256
 
 
