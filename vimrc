@@ -1,6 +1,9 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" enable all features
+set nocompatible
+
 " Wrap too long lines
 set wrap
 
@@ -29,9 +32,6 @@ set number
 " like this"}}}
 " 
 set foldmethod=marker
-
-" enable all features
-set nocompatible
 
 " powerful backspaces
 set backspace=indent,eol,start
