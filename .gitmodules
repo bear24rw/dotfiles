@@ -1,6 +1,7 @@
 [submodule "vim/bundle/indent_guides"]
 	path = vim/bundle/indent_guides
 	url = https://github.com/vim-scripts/Indent-Guides.git
+    ignore = dirty
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab
