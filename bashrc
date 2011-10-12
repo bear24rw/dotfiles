@@ -25,6 +25,7 @@ alias ssh_school='ssh thrunml@ucfilespace.uc.edu'
 
 alias mount_server='sshfs -p69 pwner@durknation.gotdns.com:/ ~/mnt/server'
 alias mount_home='sshfs -p44 user@bear24rw.gotdns.com:/ ~/.mnt/backup'
+alias mount_desktop='sshfs -p44 user@bear24rw.com:/ ~/mnt/desktop'
 
 alias ls="ls --group-directories-first --color=auto -X -h"
 alias ll="ls -l"
