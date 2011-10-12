@@ -24,9 +24,9 @@ alias ssh_home='ssh user@bear24rw.gotdns.com -p 44'
 alias ssh_school='ssh thrunml@ucfilespace.uc.edu'
 alias ssh_tv='ssh media@durknation.gotdns.com -p337'
 
-alias mount_server='sshfs -p69 pwner@durknation.gotdns.com:/ ~/mnt/server'
-alias mount_home='sshfs -p44 user@bear24rw.gotdns.com:/ ~/.mnt/backup'
-alias mount_desktop='sshfs -p44 user@bear24rw.com:/ ~/mnt/desktop'
+alias mount_server='sshfs -p69 -o reconnet -o follow_symlinks pwner@durknation.gotdns.com:/ ~/mnt/server'
+alias mount_home='sshfs -p44 -o reconnet -o follow_symlinks user@bear24rw.gotdns.com:/ ~/.mnt/backup'
+alias mount_desktop='sshfs -p44 -o reconnet -o follow_symlinks user@bear24rw.com:/ ~/mnt/desktop'
 
 alias ls="ls --group-directories-first --color=auto -X -h"
 alias ll="ls -l"
