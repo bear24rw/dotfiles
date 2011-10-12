@@ -22,6 +22,7 @@ alias ssh_server='ssh pwner@durknation.gotdns.com -p69'
 alias ssh_router='ssh admin@router'
 alias ssh_home='ssh user@bear24rw.gotdns.com -p 44'
 alias ssh_school='ssh thrunml@ucfilespace.uc.edu'
+alias ssh_tv='ssh media@durknation.gotdns.com -p337'
 
 alias mount_server='sshfs -p69 pwner@durknation.gotdns.com:/ ~/mnt/server'
 alias mount_home='sshfs -p44 user@bear24rw.gotdns.com:/ ~/.mnt/backup'
