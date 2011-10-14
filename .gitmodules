@@ -14,3 +14,6 @@
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "ls_colors"]
+	path = ls_colors
+	url = https://github.com/trapd00r/LS_COLORS.git
