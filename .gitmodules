@@ -14,3 +14,6 @@
 [submodule "ls_colors"]
 	path = ls_colors
 	url = https://github.com/trapd00r/LS_COLORS.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = https://github.com/ervandew/supertab
