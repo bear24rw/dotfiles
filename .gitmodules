@@ -5,9 +5,6 @@
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab
-[submodule "ls_colors"]
-	path = ls_colors
-	url = https://github.com/trapd00r/LS_COLORS.git
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
