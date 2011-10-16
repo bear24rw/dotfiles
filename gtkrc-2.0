@@ -1,0 +1,5 @@
+include "/usr/share/themes/New Wave/gtk-2.0/gtkrc"
+
+gtk-icon-theme-name = "Humanity-Dark"
+
+gtk-toolbar-style = GTK_TOOLBAR_ICONS
