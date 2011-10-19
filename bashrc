@@ -8,10 +8,21 @@ fi
 
 source /etc/profile.d/bash-completion.sh
 
-export PATH="/media/other/xilinx/ISE_DS/ISE/bin/lin/:/home/user/scripts/:${PATH}"
+# USER SCRIPTS
+export PATH="/home/user/scripts/:${PATH}"
+
+# XILINX
+export PATH="/media/other/xilinx/ISE_DS/ISE/bin/lin/:${PATH}"
+
+# EAGLE
 export PATH="/home/user/eagle-5.10.0/bin/:${PATH}"
-export LD_LIBRARY_PATH="/opt/cuda/sdk/C/lib:/usr/local/lib64:${LD_LIBRARY_PATH}"
-export LDPATH="/opt/cuda/sdk/C/lib:/usr/local/lib64:${LDPATH}"
+
+# CUDA
+export LD_LIBRARY_PATH="/opt/cuda/sdk/C/lib:${LD_LIBRARY_PATH}"
+export LDPATH="/opt/cuda/sdk/C/lib:${LDPATH}"
+
+export LDPATH="/usr/local/lib64:${LDPATH}"
+export LD_LIBRARY_PATH="/usr/local/lib64:${LD_LIBRARY_PATH}"
 export PKG_CONFIG_PATH="/usr/local/lib64/pkgconfig:${PKG_CONFIG_PATH}"
 
 if [ $TERM = "xterm" ]; then
