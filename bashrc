@@ -8,7 +8,7 @@ fi
 
 source /etc/profile.d/bash-completion.sh
 
-export PATH="/usr/lib/distcc/bin:/media/other/xilinx/ISE_DS/ISE/bin/lin/:/home/user/scripts/:${PATH}"
+export PATH="/media/other/xilinx/ISE_DS/ISE/bin/lin/:/home/user/scripts/:${PATH}"
 export PATH="/home/user/eagle-5.10.0/bin/:${PATH}"
 export LD_LIBRARY_PATH="/opt/cuda/sdk/C/lib:/usr/local/lib64:${LD_LIBRARY_PATH}"
 export LDPATH="/opt/cuda/sdk/C/lib:/usr/local/lib64:${LDPATH}"
@@ -33,7 +33,6 @@ alias ll="ls -l"
 alias listbiggest="qsize -a -k | sort -n -k 6"
 alias mpdstatus="sudo strace -p `ps x -L | grep mpd | tail -n 2 | head -n 1 | awk '{print $2}'`"
 
-DISTCC_DIR="/var/tmp/portage/.distcc/"
 export PYTHONSTARTUP="$HOME/.pythonrc"
 
 RED="\[\033[01;31m\]"
