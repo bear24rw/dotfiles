@@ -9,7 +9,7 @@ fi
 source /etc/profile.d/bash-completion.sh
 
 # USER SCRIPTS
-export PATH="/home/user/scripts/:${PATH}"
+export PATH="/home/user/.scripts/:${PATH}"
 
 # XILINX
 export PATH="/media/other/xilinx/ISE_DS/ISE/bin/lin/:${PATH}"
