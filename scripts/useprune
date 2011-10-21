@@ -9,7 +9,7 @@ unused=""
 
 for flag in $USE
 do
-    count=`calc $count+1`
+    let count++
     echo -ne "$count/$total\r"
 
     flag=`echo $flag | sed 's/^-//'`
