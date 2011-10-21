@@ -1,0 +1,26 @@
+source /etc/make.conf
+
+>/tmp/prune
+
+total=`echo $USE | wc -w`
+count=0
+
+unused=""
+
+for flag in $USE
+do
+    count=`calc $count+1`
+    echo -ne "$count/$total\r"
+
+    flag=`echo $flag | sed 's/^-//'`
+
+    num=`equery hasuse $flag | wc -l`
+    if [ $num = 0 ]; then
+        unused="$unused $flag"
+    fi
+done
+
+echo
+echo $unused
+
+# vim: set filetype=sh:
