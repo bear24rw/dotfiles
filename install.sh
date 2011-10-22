@@ -1,5 +1,11 @@
 #!/bin/bash
 
+RED="\033[01;31m"
+YELLOW="\033[01;33m"
+GREEN="\033[01;32m"
+BLUE="\033[01;34m"
+WHITE="\033[00m"
+
 for name in *; do
     
     # ignore ourself
@@ -12,16 +18,16 @@ for name in *; do
     # check if target already exists
     if [ -e $target ]; then
         if [ -L $target ]; then
-            echo "Updating $target --> $PWD/$name"
+            echo -e "${YELLOW}Updating${WHITE} $target --> $PWD/$name"
             rm $target
             ln -s "$PWD/$name" "$target"
         else
             # we don't want to clobber existing files
-            echo "WARNING: $target exists but is not a symlink. Skipping.."
+            echo -e "${RED}WARNING:${WHITE} $target exists but is not a symlink. Skipping.."
         fi
     else
         # target doesn't exist, just make it
-        echo "Creating $target --> $PWD/$name"
+        echo -e "${GREEN}Creating${WHITE} $target --> $PWD/$name"
         ln -s "$PWD/$name" "$target"
     fi
 done
