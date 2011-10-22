@@ -1,7 +1,7 @@
 #
-#==========================================
-#	 New Wave Pixmap Theme
-#==========================================
+#==================================================================
+#	               New Wave Pixmap Theme
+#==================================================================
 #
 # 
 # Based on: Ubuntu Human-Clearlooks
@@ -12,19 +12,26 @@
 # Former Authors:
 # Giuseppe Pennisi <giupenni78@gmail.com>
 #
-# Feel free to modify and share!
-# Licensed under Creative Commons 3.0 Attribution-Noncommercial-Share Alike
+# Licensed under Creative Commons 3.0 Attribution-Share Alike
+
+# You MUST attribute the derivative themes as:
+# "Based on the New Wave theme created by Anton Kerezov (dilomo)"
+# as well as provide a link to the original.
+#==================================================================
 #
 #---NWC-START---#
-# Version: 0.8.1 [29/07/09]
+# Version: 0.9.0 Beta 1 [23/04/2010]
 
 
 # Default color values used in Appearance Manager
-gtk_color_scheme = "fg_color: #101010\nbg_color: #E5E5E5\nbase_color: #FFFFFF\ntext_color: #1A1A1A\nselected_bg_color: #FF8F4C\nselected_fg_color: #1A1A1A\ntooltip_bg_color:#FFE6C4\ntooltip_fg_color:#330606"
-# so that we can use pulsation on windows that need attention
-gtk-enable-animations = 1   
-# This value has to be less than 990 for Rhythmbox to work (tooltips updating in 1sec intervals)
-gtk-tooltip-timeout = 970
+gtk_color_scheme = "fg_color: #1A1A1A\nbg_color: #E5E5E5\nbase_color: #FFFFFF\ntext_color: #171717\nselected_bg_color:#FFB886\nselected_fg_color:  #1D1D1D\ntooltip_bg_color:#FFE6C4\ntooltip_fg_color:#452222\nlink_color:#1F7EC8"
+
+gtk-enable-animations = 1  # so that we can use pulsation on windows that need attention
+# This value has to be less than 990 for Rhythmbox to work (tooltips updating in 1 sec. intervals)
+# An enchansmet from the Ambience theme
+gtk-auto-mnemonics = 1 
+gtk-tooltip-timeout = 990
+
 
 #---NWC-END---#
 
@@ -35,11 +42,11 @@ style "newwave-default"
 {
 	xthickness = 1
 	ythickness = 1
-
+	
         #=========================================================
         # General Style Properties
         #=========================================================
-	
+
 	GtkButton      ::child-displacement-x = 1
 	GtkButton      ::child-displacement-y = 1
 	GtkButton      ::default-border       = { 0, 0, 0, 0 }
@@ -68,7 +75,7 @@ style "newwave-default"
 	# These lines enable the New Wave Configurator to modify them. Do not remove or change!
 	
 	GtkScrollbar   ::has-backward-stepper = 1
-	GtkScrollbar   ::has-forward-stepper  = 1
+	GtkScrollbar   ::has-forward-stepper = 1
 	GtkScrollbar   ::has-secondary-backward-stepper = 0
 	GtkScrollbar   ::has-secondary-forward-stepper = 0
 	#---NWC-END---#
@@ -78,11 +85,15 @@ style "newwave-default"
 	
 	GtkMenuBar     ::shadow-type	      = GTK_SHADOW_NONE # @author:dilomo@ Remove separator from Menubar
 	GtkMenuBar     ::internal-padding     = 1
+	GtkMenuBar     ::window-dragging      = 1
 	
 	GtkMenu        ::horizontal-padding   = 3
 	GtkMenu        ::vertical-padding     = 1
 	GtkMenu        ::horizontal-offset    = -1
 	
+	# The following line hints to gecko (and possibly other appliations)
+	# that the entry should be drawn transparently on the canvas.
+	# Without this, gecko will fill in the background of the entry.
 	GtkExpander    ::expander-size        = 16
 	
 	GtkToolbar     ::internal-padding     = 2
@@ -98,15 +109,38 @@ style "newwave-default"
 	
 	GtkProgressBar ::shadow-type          = GTK_SHADOW_NONE
 	
+	GtkWidget::link-color = @link_color
+	GtkIMHtml::hyperlink-color = @link_color
+	GtkHTML::link-color = @link_color
+	
+	#benzea: dilomo: BOX
+	#benzea: and the detail string is one of a couple
+	#benzea:     "infobar-info",
+	#benzea:     "infobar-warning",
+	#benzea:     "infobar-question",
+	#benzea:     "infobar-error",
+	#benzea:     "infobar"
+	
 	#---NWC-START---#
+	#Values used in the New Wave Configurator
+	
 	GtkWidget	::cursor-aspect-ratio = 0.05
 	
+
 	# This is the pulsating rect that appears on newly launched apps	
 	WnckTasklist   ::fade-overlay-rect    = 1
-	WnckTasklist   ::fade-opacity	      = 0.6
+	WnckTasklist   ::fade-opacity	        = 0.6
 	
-	NautilusIconContainer::highlight_alpha= 145
+	NautilusIconContainer::highlight_alpha= 120
+	
+	# The rect. when you drag the mouse to select several files
+	NautilusIconContainer::selection_box_color = "#634331"
+	NautilusIconContainer::selection_box_alpha = 37
+	
+	# The main texture of the windows
+	bg_pixmap[NORMAL] = "Images/Others/background2.png"
 	#---NWC-END---#
+	
 
 	fg[NORMAL]        = @fg_color
 	fg[PRELIGHT]      = @fg_color
@@ -116,14 +150,14 @@ style "newwave-default"
 
 	bg[NORMAL]        = @bg_color
 	bg[PRELIGHT]      = shade (1.02, @bg_color)
-	bg[SELECTED]	  = mix (0.25, @fg_color, @selected_bg_color)
+	bg[SELECTED]	  = @selected_bg_color #mix (0.25, @fg_color, @selected_bg_color)
 	bg[INSENSITIVE]   = @bg_color
 	bg[ACTIVE]        = shade (0.9, @bg_color)
 
 	base[NORMAL]      = @base_color
 	base[PRELIGHT]    = shade (0.95, @bg_color)
 	base[ACTIVE]      = shade (0.90, @bg_color)
-	base[SELECTED]    = mix(0.50, shade (1.05,@selected_bg_color), @tooltip_bg_color)
+	base[SELECTED]    = @selected_bg_color #mix(0.50, shade (1.05,@selected_bg_color), @tooltip_bg_color)
 	base[INSENSITIVE] = @bg_color
 
 	text[NORMAL]      = @text_color
@@ -132,9 +166,76 @@ style "newwave-default"
 	text[SELECTED]    = @selected_fg_color
 	text[INSENSITIVE] = darker (@bg_color)
 	
+	# Colors for the GtkInfobar themeing if you 
+	# don't want to theme them with images
+	
+	#color["error_bg_color"] = "black"
+	#color["error_fg_color"] = "white"
+	
+	#color["info_bg_color"] = "#9EDDFF"
+	#color["info_fg_color"] = "#ffffff"
+	
+	#color["warning_bg_color"] = "black"
+	#color["warning_fg_color"] = "white"
+	
+	#color["question_bg_color"] = "black"
+	#color["question_fg_color"] = "white"
+	
+	#color["other_bg_color"] = "black"
+	#color["other_fg_color"] = "white"
+	
 	
 	engine "pixmap"
 	{
+	# Info Bar
+	
+	image
+	{
+		function		= BOX
+		recolorable		= TRUE
+		detail 			= "infobar-info"
+		file			= "Images/Others/nautilus-infobar-overlay.png"
+		border			= { 2, 2, 2, 3}
+		stretch			= TRUE
+	}
+	
+	image
+	{
+		function		= BOX
+		recolorable		= TRUE
+		detail 			= "infobar-warning"
+		file			= "Images/Others/nautilus-infobar-overlay-warning.png"
+		border			= { 2, 2, 2, 3}
+		stretch			= TRUE
+	}
+	image
+	{
+		function		= BOX
+		recolorable		= TRUE
+		detail 			= "infobar-error"
+		file			= "Images/Others/nautilus-infobar-overlay-error.png"
+		border			= { 2, 2, 2, 3}
+		stretch			= TRUE
+	}
+	image
+	{
+		function		= BOX
+		recolorable		= TRUE
+		detail 			= "infobar-question"
+		file			= "Images/Others/nautilus-infobar-overlay-question.png"
+		border			= { 2, 2, 2, 3}
+		stretch			= TRUE
+	}
+	
+	image
+	{
+		function		= BOX
+		recolorable		= TRUE
+		detail 			= "infobar"
+		file			= "Images/Others/nautilus-infobar-overlay.png"
+		border			= { 2, 2, 2, 3}
+		stretch			= TRUE
+	}
 	
 	# Shadows 
 	
@@ -184,7 +285,7 @@ style "newwave-default"
 		shadow			= IN 
 		recolorable		= TRUE
 		file			= "Images/Frame-Gap/frame-in.png"
-		border			={ 4, 4, 4,3}
+		border			={ 3, 3, 3, 3}
 		stretch			= TRUE
 		gap_start_file		= "Images/Frame-Gap/frame-gapstart-in.png"
 		gap_start_border	= { 4, 0, 4, 0}
@@ -201,12 +302,12 @@ style "newwave-default"
 		shadow			= OUT
 		recolorable		= TRUE
 		file			= "Images/Frame-Gap/frame-out.png"
-		border			= { 4, 4, 4, 4}
+		border			= { 4, 4, 3, 4}
 		stretch			= TRUE
 		gap_start_file		= "Images/Frame-Gap/frame-gapstart-out.png"
-		gap_start_border	= { 4, 0, 4, 0}
+		gap_start_border	= { 3, 0, 2, 0}
 		gap_end_file		= "Images/Frame-Gap/frame-gapend-out.png"
-		gap_end_border		= { 0, 4, 4, 0}
+		gap_end_border		= { 0, 3, 2, 0}
 		gap_side		= TOP
 	}
 	
@@ -281,7 +382,7 @@ style "newwave-default"
       	  	orientation		= HORIZONTAL
     	}
     	
-    	## vertical handle
+    	## Vertical handle
     	image
     	{
     	  	function		= HANDLE
@@ -334,17 +435,17 @@ style "newwave-default"
       		function		= HLINE
      		recolorable		= TRUE
       		file			= "Images/Lines/line-h.png"
-      		#border			= { 1, 1, 0, 1 }
+      		border			= { 12, 12, 0, 1 }
       		stretch			= TRUE
       }
 	
-      #@author:dilomo@  focus image used on buttons any derivatives (check box, combo and so on) Now obsolate!
+      #@author:dilomo@  Focus image used on button's derivatives (check box, combo and so on)
       image
       {
     	  	function		= FOCUS
   		recolorable		= TRUE
    	 	file			= "Images/Others/focus.png"
-    		border			= { 2, 2, 2, 2 }
+    		border			= { 6, 6, 6, 6 }
     	 	stretch			= TRUE
       }
    	        
@@ -851,15 +952,17 @@ style "newwave-default"
    }
 }
 
-
-style "newwave-wide" = "newwave-default"
+style "newwave-default-notexture" = "newwave-default"
+{
+	bg_pixmap[NORMAL] = "Images/Others/null.png"
+}
+style "newwave-wide-notexture" = "newwave-default-notexture"
 {
 	bg[SELECTED]	  = @selected_bg_color
 	xthickness = 2
 	ythickness = 2
 }
-
-style "newwave-wider" = "newwave-default"
+style "newwave-wider-notexture" = "newwave-default-notexture"
 {
 	bg[SELECTED]	  = @selected_bg_color
 	xthickness = 3
@@ -867,6 +970,21 @@ style "newwave-wider" = "newwave-default"
 }
 
 
+style "newwave-wide" = "newwave-default"
+{
+	bg[SELECTED]	  = @selected_bg_color
+	xthickness = 2
+	ythickness = 2
+}
+style "newwave-wider" = "newwave-default"
+{
+	bg[SELECTED]	  = @selected_bg_color
+	xthickness = 3
+	ythickness = 3
+}
+
+style "empty"
+{}
 
 
 #=========================================================
@@ -876,38 +994,145 @@ style "newwave-wider" = "newwave-default"
 #=========================================================
 
 
-
+# @author:dilomo@ This has to fix the Appearance manager crash
 style "newwave-window" = "newwave-wide"
+{
+   #bg_pixmap[NORMAL] = "Images/Others/background2.png"
+}
+
+
+style "newwave-frame" = "newwave-wide"
+{	
+ # engine "pixmap"
+ # {
+ #	image
+#	{
+#		function = SHADOW
+ #               file = "Images/Others/frame.png"
+ ##               border = {1, 1, 1, 1}
+#		stretch = TRUE
+
+#	}
+ # }
+}
+
+
+# Fix ugly frames with Gedit in the statusbar
+style "newwave-frame-gedit"
 {	
   engine "pixmap"
   {
  	image
 	{
-		function = FLAT_BOX
+
+		function = SHADOW
                 file = "Images/Others/null.png"
-                border = {2, 2, 2, 2}
-                detail = "base"
+                #border = {1, 1, 1, 1}
 		#stretch = TRUE
 
 	}
   }
 }
 
-# Fix issues with Gedit in the statusbar
-style "newwave-frame" #= "newwave-wide"
+style "newwave-frame-panel"
 {	
-#  engine "pixmap"
- # {
- #	image
-#	{
-#		function = SHADOW
- #               file = "Images/Others/frame.png"
- #               border = {1, 1, 1, 1}
-#		stretch = TRUE
-#
-#	}
- # }
+  engine "pixmap"
+  {
+ 	image
+	{
+
+		function = SHADOW
+                file = "Images/Shadows/shadow-etched-out-panel.png"
+                border = {2, 2, 2, 2}
+		#stretch = TRUE
+
+	}
+  }
 }
+
+# Cool but the selected state is rather ugly and cannot be themed properly
+style "newwave-desktop-icon"
+{
+#1 for activate
+NautilusIconContainer::frame_text = 1
+NautilusIconContainer::light_info_color = "#DADADA"
+NautilusIconContainer::dark_info_color = "#101010"
+NautilusIconContainer::prelight_icon_render_mode = 1
+NautilusIconContainer::activate_prelight_icon_label = 1
+
+base[NORMAL] = "black"
+base[PRELIGHT] = "black"
+base[SELECTED] = "black" #"#7C3320"
+base[ACTIVE] = "white"
+
+text[NORMAL] = "white"
+text[PRELIGHT] = "white"
+text[SELECTED] = "white"
+NautilusIconContainer::normal_alpha = 60
+NautilusIconContainer::prelight_alpha = 80
+NautilusIconContainer::highlight_alpha = 90
+}
+
+style "newwave-desktop-icon-focus"
+{
+ engine "pixmap"
+  {
+  image
+      {
+    	  	function		= FOCUS
+  		recolorable		= TRUE
+   	 	file			= "Images/Others/focus.png"
+    		border			= { 2, 2, 2, 2 }
+    	 	stretch			= TRUE
+      }
+     }
+}
+
+#widget_class "*DesktopIcon*" style "newwave-desktop-icon"
+
+
+#=========================================================
+# Icon View
+#=========================================================
+
+# Theme the iconview selected items
+style "newwave-iconview"
+{
+	#GtkIconView::selection-box-color	= "black"
+	#GtkIconView::selection-box-alpha 	= 60
+	
+ engine "pixmap"
+  {
+  image
+      {
+    	  	function		= FLAT_BOX
+  		recolorable		= TRUE
+   	 	file			= "Images/Others/iconview-item.png"
+    		border			= {3, 3, 3, 3 }
+    	 	stretch			= TRUE
+      }
+
+   }
+}
+
+widget_class "*IconView" style "newwave-iconview"
+
+
+
+#=========================================================
+# Assistant (Wizard windows)
+#=========================================================
+
+# Theme properly the assistant 
+style "newwave-assistant"
+{
+	bg[SELECTED] ="#9A9A9A"#"#484848"
+	fg[SELECTED] ="#F3F3F3"# "#ECECEC"
+}
+
+widget_class "*Assistant*" style "newwave-assistant"
+
+
 
 #=========================================================
 # Buttons
@@ -915,6 +1140,8 @@ style "newwave-frame" #= "newwave-wide"
 
 style "newwave-button" = "newwave-wider"
 { 
+	#xthickness = 4
+	#ythickness = 4
 
 	bg[NORMAL]        = shade (0.98, @bg_color)
 	bg[PRELIGHT]      = shade (1.04, @bg_color)
@@ -931,12 +1158,12 @@ style "newwave-button" = "newwave-wider"
 	GtkButton::child_displacement_y = 1
 	
 	# Increase because focus padding is zero
-	GtkButton::inner-border =  {2, 2, 2, 2}
+	GtkButton::inner-border =  {2, 2,2, 2}
 	
 	# Use to show glow around default buttons
-	GtkButton::default-border = { 3, 3, 3, 3}
-	GtkButton::default-outside-border = { 3, 3, 3, 3}
-
+	#GtkButton::default-border = { 3, 3, 3, 3}
+	#GtkButton::default-outside-border = { 3, 3, 3, 3}
+	#GtkWidget::draw-border = {3,3,3,3}
  
 	engine "pixmap"
 	{
@@ -959,8 +1186,9 @@ style "newwave-button" = "newwave-wider"
 		function		= BOX
 		state			= NORMAL
 		shadow			= OUT
+
 		file			= "Images/Buttons/button-normal.png"		
-		border			={ 4, 4, 4, 4 }
+		border			= {4, 4, 4, 4}
 		stretch			= TRUE
 	}
 
@@ -969,6 +1197,7 @@ style "newwave-button" = "newwave-wider"
 	{
 		function		= BOX
 		state			= NORMAL
+		#shadow			= IN
 		detail			= "buttondefault"
 		file			= "Images/Buttons/button-default.png"		
 		border			={ 4, 4, 4, 4 }
@@ -981,7 +1210,7 @@ style "newwave-button" = "newwave-wider"
 		function		= BOX
 		state			= ACTIVE
 		file			= "Images/Buttons/button-pressed.png"
-		border			= { 4, 4, 4, 4 }
+		border			={4, 4, 4, 4}
 		stretch			= TRUE
 	}
 	
@@ -995,7 +1224,7 @@ style "newwave-button" = "newwave-wider"
 		recolorable		= TRUE
 		shadow			= IN
 		file			= "Images/Buttons/button-pressed-prelight.png"
-		border			= { 4, 4, 4, 4 }
+		border			= {4, 4, 4, 4}
 		stretch			= TRUE
 	}
 	#@author:dilomo@ prelight used on normal buttons
@@ -1006,7 +1235,7 @@ style "newwave-button" = "newwave-wider"
 		recolorable		= TRUE
 		shadow			= OUT
 		file			= "Images/Buttons/button-prelight.png"
-		border			= { 4, 4, 4, 4 }
+		border			= {4, 4, 4, 4}
 		stretch			= TRUE
 	}
 	
@@ -1016,7 +1245,7 @@ style "newwave-button" = "newwave-wider"
 		state			= INSENSITIVE
 		shadow			= IN
 		file			= "Images/Buttons/button-insensitive-in.png"	
-		border			= { 4, 4, 4, 4 }
+		border			= {4, 4, 4, 4}
 		stretch			= TRUE
 	}
 
@@ -1026,12 +1255,28 @@ style "newwave-button" = "newwave-wider"
 		state			= INSENSITIVE
 		shadow			= OUT
 		file			= "Images/Buttons/button-insensitive.png"	
-		border			= { 4, 4, 4, 4 }
+		border			= {4, 4, 4, 4}
+		stretch			= TRUE
+	}
+	image 
+	{
+		function		= BOX
+		state			= INSENSITIVE
+		#shadow			= IN
+		detail			= "buttondefault"
+		file			= "Images/Buttons/button-default-insensitive.png"		
+		border			={4, 4, 4, 4}
 		stretch			= TRUE
 	}
 	
 		
     }
+}
+style "newwave-button-small" = "newwave-button"
+{
+	xthickness = 1
+	ythickness = 1
+	GtkButton::inner-border =  {1,1,1, 1}
 }
 
 #=========================================================
@@ -1041,7 +1286,12 @@ style "newwave-progressbar" = "newwave-default"
 {
   xthickness            		= 1
   ythickness            		= 1
-
+  
+  fg[NORMAL] = "#555555"
+  fg[ACTIVE] = "#555555"
+  fg[SELECTED] = "#555555"
+  fg[PRELIGHT] = "#360000"
+  
   engine "pixmap" 
   {
 	image
@@ -1078,8 +1328,8 @@ style "newwave-progressbar" = "newwave-default"
 		border				= { 2, 2, 2, 2 }
 		stretch				= TRUE
 		overlay_file                    = "Images/ProgressBar/over-progressbar-horiz.png"
-		overlay_stretch                  = TRUE
-		overlay_border			= { 2, 2, 2, 2 }
+		overlay_stretch                  = FALSE
+		overlay_border			= { 2, 2, 6, 6 }
 		orientation			= HORIZONTAL
 	} 
 	image
@@ -1090,7 +1340,7 @@ style "newwave-progressbar" = "newwave-default"
 		border				= { 2, 2, 2, 2 }
 		stretch				= TRUE
 		overlay_file                    = "Images/ProgressBar/over-progressbar-horiz.png"
-		overlay_stretch                 = TRUE
+		overlay_stretch                 = FALSE
 		overlay_border			= { 2, 2, 2, 2 }
 		orientation			= VERTICAL
 	}
@@ -1332,8 +1582,6 @@ style "newwave-radiobutton" = "newwave-default"
             overlay_file    		= "Images/Check-Radio/opt-line-insensitive.png"
             overlay_stretch 		= FALSE
         }
-
-
 
 	# Overlay image
   	image 
@@ -2012,7 +2260,7 @@ style "newwave-scrollbar-fix" = "newwave-scrollbar"
         }
 
 
-	# Steppers - right
+	# Steppers OO - right
         #=============================
         image 
         {
@@ -2063,7 +2311,7 @@ style "newwave-scrollbar-fix" = "newwave-scrollbar"
         }
 
         
-        # Steppers - left
+        # Steppers OO - left
         #=============================
         image 
         {
@@ -2149,7 +2397,6 @@ style "newwave-scrolledwindow" = "newwave-default"
 }
 class "GtkScrolledWindow" style "newwave-scrolledwindow"
 
-
 #=========================================================
 # Toolbar
 #=========================================================
@@ -2157,7 +2404,7 @@ style "newwave-toolbar"
 {
         xthickness            			= 2
         ythickness            			= 3
-  
+	
 	engine "pixmap"
 	{
 
@@ -2178,6 +2425,8 @@ style "newwave-toolbar"
 			stretch		= TRUE
     		}
  	}
+ 	
+ 	
 }
 style "newwave-toolbar-handle"
 {
@@ -2247,6 +2496,33 @@ style "newwave-toolbar-noimage-small"
     		}
  	}
 }
+
+style "newwave-toolbar-evomsg"
+{
+	GtkToolbar     ::internal-padding     = 0
+        xthickness            			= 2
+        ythickness            			= 2
+
+	engine "pixmap"
+	{
+		image
+		{
+			function	= BOX
+			state           = INSENSITIVE
+			file		= "Images/Toolbar/toolbar-insens.png" 
+			border		= { 1, 1, 2, 2}
+			stretch		= TRUE
+    		}
+
+		image
+		{
+			function	= BOX
+			file		= "Images/Toolbar/toolbar-evo-msg.png" 
+			border		= { 1, 1, 2, 2}
+			stretch		= TRUE
+    		}
+ 	}
+}
 	
 
 widget_class "*BonoboDockItem" style "newwave-toolbar"
@@ -2270,8 +2546,9 @@ widget "*swt*toolbar*" 		style:highest "newwave-toolbar-noimage-small"
 # Toolbar buttons (not currently used)
 #=========================================================
 
-style "newwave-toolbuttons" = "newwave-button"
+style "newwave-toolbuttons-old" = "newwave-button"
 {
+        
 engine "pixmap" {
       
 
@@ -2287,7 +2564,9 @@ engine "pixmap" {
 }
 }
 
-style "newwave-toolbuttons-old" = "newwave-wide"
+
+
+style "newwave-toolbuttons" = "newwave-wide"
 {  
  	xthickness            			= 3
         ythickness            			= 0
@@ -2307,8 +2586,8 @@ style "newwave-toolbuttons-old" = "newwave-wide"
 	# Increase because focus padding is zero
 	GtkButton::inner-border =  {2, 2, 2, 2}
 	# Use to show glow around default buttons
-	GtkButton::default-border = { 3, 3, 3, 3}
-	GtkButton::default-outside-border = { 3, 3, 3, 3}
+	GtkButton::default-border = { 2,2, 2, 2}
+	GtkButton::default-outside-border = { 2, 2, 2, 2}
 
 	engine "pixmap" {
       
@@ -2330,7 +2609,7 @@ style "newwave-toolbuttons-old" = "newwave-wide"
 			recolorable     		= TRUE
 			state				= NORMAL
 			file            		= "Images/Toolbar/toolbutton-normal.png"
-			border          		= { 4, 4, 4, 4 }
+			border          		= { 4, 4, 0, 4 }
 			stretch         		= TRUE
 		}
 		image
@@ -2340,7 +2619,7 @@ style "newwave-toolbuttons-old" = "newwave-wide"
 			state				= PRELIGHT
 			shadow                          = OUT
 			file            		= "Images/Toolbar/toolbutton-prelight.png"
-			border          		= { 4, 4, 4, 4 }
+			border          		= { 4, 4, 0, 3 }
 			stretch         		= TRUE
 		}
 		image
@@ -2384,7 +2663,10 @@ style "newwave-toolbuttons-old" = "newwave-wide"
 		}  
 	}
 }
-
+style "newwave-toolbuttons-bigger" = "newwave-toolbuttons" 
+{
+ythickness            			= 2
+}
 
 #=========================================================
 # Range
@@ -2551,7 +2833,7 @@ style "newwave-spinbutton" = "newwave-wider"
  GtkSpinButton::page-size		 	= 0
  GtkWidget::interior_focus			= 0
  GtkWidget::internal-padding 			= 3
- GtkSpinButton::shadow-type			= GTK_SHADOW_IN
+ #GtkEntry::inner-border        = {0, 0, 1, 1}
   
   engine "pixmap"
   {
@@ -2668,33 +2950,25 @@ style "newwave-spinbutton" = "newwave-wider"
 
     # Spin - entry (textbox)
     #=============================
-    image
+    
+	image
 	{
 		function		= FOCUS
 		recolorable		= TRUE
+		detail			= "entry"
 		file			= "Images/Spin/text-entry-focus.png"
 		border			= { 2, 2, 3, 3}
 		stretch			= TRUE
 	}	
     
-    image
-	{
-		function	        = BOX
-		recolorable	        = TRUE
-		shadow		        = IN
-		state		        = NORMAL
-		detail		        = "entry"
-		file		        = "Images/Spin/text-entry.png"
-		border		        = { 2 , 2 ,3 ,3 }
-		stretch		        = TRUE
-	}
+      
 
-    image
+        image
 	{
 		function		= SHADOW
-		state			= NORMAL
 		shadow			= IN
-		recolorable		= TRUE
+		state			= NORMAL
+		recolorable		= FALSE
 		detail			= "entry"
 		file			= "Images/Spin/text-entry.png"
 		border			= { 2, 2, 2, 2}
@@ -2714,6 +2988,7 @@ style "newwave-comboboxentry" = "newwave-wider"
 {
   # Makes the button of the combo to have interior focus
   GtkButton::interior_focus			= 0
+  GtkButton::inner-border = {1, 1, 1, 1}
 
   engine "pixmap"
   {
@@ -2790,7 +3065,7 @@ style "newwave-combomenu"
 }
 widget_class "*GtkComboBox*.*GtkMenu*.*" style "newwave-combomenu"
 
-style "newwave-list-item"
+style "newwave-list-item" = "newwave-wide-notexture"
 {
   fg[PRELIGHT] = @bg_color      
   engine "pixmap"
@@ -2899,9 +3174,7 @@ style "newwave-entry" = "newwave-wider"
   #@author:dilomo@ Disable outer focus glow because it look ugly in comboboxes and spins
   GtkWidget::interior_focus	= 0
   GtkEntry::inner-border        = {2, 2, 1, 1}
-  
 
-  
   engine "pixmap"
   {
     
@@ -2983,6 +3256,8 @@ style "newwave-entry-nofocus" = "newwave-entry"
 
 style "newwave-panel-entry" = "newwave-entry"
 {
+	#base[NORMAL] = "#CECECE"
+	
   engine "pixmap"
   {
     
@@ -3054,9 +3329,228 @@ style "newwave-panel-entry" = "newwave-entry"
     }  
  }
 }
-# Match the entries that might appear in the gnome panel as well as the dictionary applet
-widget_class "*Panel*Entry*" style :highest "newwave-panel-entry"
-widget_class "*GdictApp*Entry*" style :highest "newwave-panel-entry"
+
+style "newwave-panel-entry-blue" = "newwave-entry"
+{
+  engine "pixmap"
+  {
+    
+    # i'm unsure about these
+    image
+    {
+      function			= BOX
+      recolorable		= TRUE
+      shadow			= IN
+      state			= NORMAL
+      file			= "Images/Shadows/entry-shadow-in-panel-blue.png"
+      border			= { 3,3,4,3 }
+      stretch			= TRUE
+    }	
+    image
+    {
+     function			= BOX
+      recolorable		= TRUE
+      shadow			= OUT
+      state			= NORMAL
+      file			= "Images/Shadows/entry-shadow-in-panel-blue.png" 
+      border			= { 3,3,4,3 }
+      stretch			= TRUE
+    }
+    image	
+    {
+      function			= BOX
+      recolorable		= TRUE
+      shadow			= OUT
+      state			= ACTIVE
+      file			= "Images/Shadows/entry-focus-panel-blue.png"
+      border			= { 2,2,2,2 }
+      stretch			= TRUE
+    }
+    image	
+    {
+      function			= BOX
+      recolorable		= TRUE
+      shadow			= IN
+      state			= INSENSITIVE
+      file			= "Images/Shadows/entry-focus-panel-blue.png"
+      border			= { 2,2,2,2 }
+      stretch			= TRUE
+    }
+    
+    
+    # Glow image when selected
+    image
+    {
+      function			= FOCUS
+      recolorable		= TRUE
+      detail			= "entry"
+      file			= "Images/Shadows/entry-focus-panel-blue.png"
+      border			= {3, 3, 4, 3}
+      stretch			= TRUE
+    }	
+
+    # the actual textbox in normal state
+    image
+    {
+     	function		= SHADOW
+    	detail			= "entry"
+    	shadow			= IN
+	state			= NORMAL
+    	recolorable		= FALSE
+    	file			= "Images/Shadows/entry-shadow-in-panel-blue.png"
+    	border			= { 2,2,2,2 }
+    	stretch			= TRUE
+    }  
+ }
+}
+
+style "newwave-panel-entry-nopixmap" = "newwave-entry"
+{ # Nopixmap isn't really the lack of image but just to match with the panel theme name
+  engine "pixmap"
+  {
+    
+    # i'm unsure about these
+    image
+    {
+      function			= BOX
+      recolorable		= TRUE
+      shadow			= IN
+      state			= NORMAL
+      file			= "Images/Shadows/entry-shadow-in-panel-nopixmap.png"
+      border			= { 3,3,4,3 }
+      stretch			= TRUE
+    }	
+    image
+    {
+     function			= BOX
+      recolorable		= TRUE
+      shadow			= OUT
+      state			= NORMAL
+      file			= "Images/Shadows/entry-shadow-in-panel-nopixmap.png" 
+      border			= { 3,3,4,3 }
+      stretch			= TRUE
+    }
+    image	
+    {
+      function			= BOX
+      recolorable		= TRUE
+      shadow			= OUT
+      state			= ACTIVE
+      file			= "Images/Shadows/entry-focus-panel-nopixmap.png"
+      border			= { 2,2,2,2 }
+      stretch			= TRUE
+    }
+    image	
+    {
+      function			= BOX
+      recolorable		= TRUE
+      shadow			= IN
+      state			= INSENSITIVE
+      file			= "Images/Shadows/entry-focus-panel-nopixmap.png"
+      border			= { 2,2,2,2 }
+      stretch			= TRUE
+    }
+    
+    
+    # Glow image when selected
+    image
+    {
+      function			= FOCUS
+      recolorable		= TRUE
+      detail			= "entry"
+      file			= "Images/Shadows/entry-focus-panel-nopixmap.png"
+      border			= {3, 3, 4, 3}
+      stretch			= TRUE
+    }	
+
+    # the actual textbox in normal state
+    image
+    {
+     	function		= SHADOW
+    	detail			= "entry"
+    	shadow			= IN
+	state			= NORMAL
+    	recolorable		= FALSE
+    	file			= "Images/Shadows/entry-shadow-in-panel-nopixmap.png"
+    	border			= { 2,2,2,2 }
+    	stretch			= TRUE
+    }  
+ }
+}
+
+style "newwave-panel-entry-noir" = "newwave-entry"
+{ # Nopixmap isn't really the lack of image but just to match with the panel theme name
+  engine "pixmap"
+  {
+    
+    # i'm unsure about these
+    image
+    {
+      function			= BOX
+      recolorable		= TRUE
+      shadow			= IN
+      state			= NORMAL
+      file			= "Images/Shadows/entry-shadow-in-panel-noir.png"
+      border			= { 3,3,4,3 }
+      stretch			= TRUE
+    }	
+    image
+    {
+     function			= BOX
+      recolorable		= TRUE
+      shadow			= OUT
+      state			= NORMAL
+      file			= "Images/Shadows/entry-shadow-in-panel-noir.png" 
+      border			= { 3,3,4,3 }
+      stretch			= TRUE
+    }
+    image	
+    {
+      function			= BOX
+      recolorable		= TRUE
+      shadow			= OUT
+      state			= ACTIVE
+      file			= "Images/Shadows/entry-focus-panel-noir.png"
+      border			= { 2,2,2,2 }
+      stretch			= TRUE
+    }
+    image	
+    {
+      function			= BOX
+      recolorable		= TRUE
+      shadow			= IN
+      state			= INSENSITIVE
+      file			= "Images/Shadows/entry-focus-panel-noir.png"
+      border			= { 2,2,2,2 }
+      stretch			= TRUE
+    }
+    
+    
+    # Glow image when selected
+    image
+    {
+      function			= FOCUS
+      recolorable		= TRUE
+      detail			= "entry"
+      file			= "Images/Shadows/entry-focus-panel-noir.png"
+      border			= {3, 3, 4, 3}
+      stretch			= TRUE
+    }	
+
+    # the actual textbox in normal state
+    image
+    {
+     	function		= SHADOW
+    	detail			= "entry"
+    	shadow			= IN
+	state			= NORMAL
+    	recolorable		= FALSE
+    	file			= "Images/Shadows/entry-shadow-in-panel-noir.png"
+    	border			= { 2,2,2,2 }
+    	stretch			= TRUE
+    }  
+ }
+}
 
 #=========================================================
 # Task list
@@ -3068,7 +3562,7 @@ style "newwave-tasklist" = "newwave-wide"
 #=========================================================
 # Treeview
 #=========================================================
-style "newwave-treeview" 
+style "newwave-treeview" = "newwave-wide-notexture"
 {
         # make unfocused items have different text color
         text[ACTIVE]    = shade(0.43, @selected_bg_color)
@@ -3430,6 +3924,16 @@ style "newwave-treeview"
 			file            = "Images/Tree/selected-active.png"
 			stretch		= TRUE
 		}
+		
+		image
+		{
+			function	= SHADOW
+			shadow		= IN
+			recolorable	= TRUE
+			file		= "Images/Tree/shadow-in.png"
+			border		= { 2, 2, 3, 2}
+			stretch		= TRUE
+		}
 	}
 }
 
@@ -3437,7 +3941,7 @@ style "newwave-treeview"
 #=========================================================
 # Treeview in Nautilus SidePane
 #=========================================================
-style "newwave-treeview-nautilus-sidebar"
+style "newwave-treeview-nautilus-sidebar" = "newwave-default-notexture"
 {
 	
         # make unfocused items have different text color but darker than in standard treeviews
@@ -3446,6 +3950,9 @@ style "newwave-treeview-nautilus-sidebar"
 	
 	bg[NORMAL]      = "#ffffff" # Color of sorted columns
 	bg[SELECTED]    = @selected_bg_color
+	
+	#bg_pixmap[NORMAL] = "Images/Others/background2.png"
+	
 	
         engine "pixmap"
 	{
@@ -3495,6 +4002,8 @@ style "newwave-treeview-nautilus-sidebar"
 			stretch		= TRUE
 		}
 		
+		#bg_pixmap[NORMAL] = "Images/Others/background2.png"
+		
 		# this is needed for the progressbars inside treeviews (e.g. Transmission, System Info)
 	        image
 		{
@@ -3505,11 +4014,16 @@ style "newwave-treeview-nautilus-sidebar"
 			stretch		= TRUE
 		}
 	}
+	#bg_pixmap[NORMAL] = "Images/Others/background2.png"
 }
 
 style "newwave-treeview-header" = "newwave-default"
 {
 	bg[SELECTED] = mix(0.50, shade (1.05,@selected_bg_color), @tooltip_bg_color)
+	
+	fg[PRELIGHT] = @text_color
+	fg[NORMAL] = "#4E4E4E"
+
 
 	GtkButton::interior_focus = 1
 	GtkButton::focus_padding = 0
@@ -3547,7 +4061,7 @@ style "newwave-treeview-header" = "newwave-default"
 			recolorable    	= TRUE
 			state		= PRELIGHT
 			file            = "Images/ListHeaders/list_header-prelight.png"
-			border          = { 2, 2, 2, 2 }
+			border          = { 2, 2, 2, 4 }
 			stretch         = TRUE
       		}
       		
@@ -3569,7 +4083,7 @@ style "newwave-treeview-header" = "newwave-default"
 			recolorable    	= TRUE
 			state		= ACTIVE
 			file		= "Images/ListHeaders/list_header-pressed.png"
-			border          = { 2, 2, 2, 2}
+			border          = { 2, 2, 2, 3}
 			stretch         = TRUE
       		}
 		image
@@ -3667,7 +4181,7 @@ engine "pixmap"
 		recolorable		= TRUE
 		detail                  = "tab"
 		file			= "Images/Tabs/tab-top-active.png"
-		border		        = { 3, 3, 5, 1}
+		border		        = { 3, 3,10, 1}
 		stretch		        = TRUE
 		gap_side		= BOTTOM
 	}
@@ -3824,6 +4338,13 @@ style "newwave-statusbar"
         ythickness = 0
         
 	bg[NORMAL] = @bg_color
+	
+	fg[NORMAL] = "#404040"
+	fg[PRELIGHT] = "#262626"
+	fg[INSENSITIVE] = "#4D4D4D"
+	text[NORMAL] = "#404040"
+	text[PRELIGHT] = "#262626"
+	text[INSENSITIVE] = "#4D4D4D"
 	#fg[ACTIVE] = shade (0.8, @bg_color)
 	#text[NORMAL] = shade (0.8, @bg_color)
 	
@@ -3853,7 +4374,7 @@ style "newwave-scale" = "newwave-range"
 	#}
 }
 
-style "newwave-hscale"
+style "newwave-hscale" = "newwave-scale"
 {
 	#engine "clearlooks"
 	#{
@@ -3861,7 +4382,7 @@ style "newwave-hscale"
 	#}
 }
 
-style "newwave-vscale"
+style "newwave-vscale" = "newwave-scale"
 {
 	#engine "clearlooks"
 	#{
@@ -3878,9 +4399,9 @@ style "newwave-menubar" = "newwave-wider"
 	xthickness = 2
 	ythickness = 2
 
-	fg[NORMAL] = @bg_color
-	fg[PRELIGHT] = lighter(@text_color)
-	fg[ACTIVE] =@text_color
+	fg[NORMAL] = "#CCCCCC"#shade(0.85, @bg_color)
+	fg[PRELIGHT] = "white"
+	fg[ACTIVE] = "white"
 	fg[INSENSITIVE] = shade(0.32 , @bg_color)
 	
 	bg[NORMAL] = "#5D5D5D" #Replace "#696969" with smth darker to make menubar less visible when loading windows in v. 0.7.x # @author:dilomo@ old value in v0.5.6 "#5f5f5f"
@@ -3940,7 +4461,7 @@ style "newwave-menubar" = "newwave-wider"
       			recolorable	= TRUE
 			state 		= PRELIGHT
      			file		= "Images/MenuMenubar/menubar-item.png"
-      			border		= { 2, 2, 4, 2 }
+      			border		= { 2, 2, 0, 2 }
       			stretch		= TRUE
     		}
  	}
@@ -4022,20 +4543,20 @@ style "newwave-menubar-light" = "newwave-wider"
 #---NWC-START---#
 
 #widget_class "*Fix*MenuBar*"           	style :highest "newwave-menubar-light"
-
+#1A1A1A
 #---NWC-END---#
 
-style "newwave-menu-notop" 
+style "newwave-menu-notop" = "newwave-default-notexture"
 {
         xthickness = 1
         ythickness = 3  
 	
-	bg[NORMAL] = "#F7F7F7"
+	bg[NORMAL] = "#F2F2F2"
         
-        base[NORMAL] = "#F7F7F7"
+        base[NORMAL] = "#F2F2F2" #"#F7F7F7"
         
-        fg[NORMAL] = shade(0.3, "#696969")
-        fg[PRELIGHT] =  @text_color
+        fg[NORMAL] = "#171717" #shade(0.3, "#696969")
+        fg[PRELIGHT] = "#141414"
         fg[ACTIVE] =  @text_color
         fg[SELECTED] =  @text_color
         
@@ -4342,15 +4863,62 @@ style "panel" = "newwave-default"
 	#@autho:gp@ Improve consistency between metacity-frame and application active in taskbar.
 	bg[ACTIVE] = shade(1.02, "#696969")     #bg[ACTIVE] = shade(2.5, "#424242")
 	#@autho:gp@ Improve consistency between active-menu-item and menu-background.
-	bg[SELECTED] = shade ( 1.60, @bg_color) #bg[SELECTED] = shade(3.2, "#424242")
+	bg[SELECTED] =  "#989594" #bg[SELECTED] = shade(3.2, "#424242")
 	
 	bg_pixmap[NORMAL] = "Images/Panel/PanelBarLong.png"
  	
 }
 
-style "panel-nopixmap" = "panel"
+style "panel-nopixmap" = "newwave-default"
 {   
- 	bg_pixmap[NORMAL] = "Images/Others/null.png"
+ 	fg[NORMAL] = shade(0.97, @bg_color) #mix(0.70, lighter(@selected_bg_color), @bg_color)
+	fg[PRELIGHT] =@text_color # lighter(mix(0.90, lighter(@selected_bg_color), @bg_color))
+	#@autho:gp@ Improve consistency between metacity-frame and application active in taskbar.
+	fg[ACTIVE] = @base_color   # @text_color # lighter(mix(0.50, lighter(@selected_bg_color), @bg_color))
+	
+  	# @author:dilomo@
+  	#dark color from v0.1 :  "#4C4D4E"
+  	#dark color from v0.1.1 :  "#424242"  	
+	bg[NORMAL] = "#3a3a3a" #This is dark gray
+	# @author:gp@ Same color as item selected of taskbar menu.
+	bg[PRELIGHT] = shade ( 1.60, @bg_color) #shade(3.0, "#424242") 
+	#@autho:gp@ Improve consistency between metacity-frame and application active in taskbar.
+	bg[ACTIVE] = shade(1.02, "#696969")     #bg[ACTIVE] = shade(2.5, "#424242")
+	#@autho:gp@ Improve consistency between active-menu-item and menu-background.
+	bg[SELECTED] = "#989594" #bg[SELECTED] = shade(3.2, "#424242")
+}
+
+# Extra panel themes for the New Wave Configurator
+style "panel-light" = "panel"
+{
+	fg[NORMAL] = "#2B2B2B"
+	fg[PRELIGHT] = "#000000"
+	fg[ACTIVE] =  @fg_color
+	
+	bg[NORMAL] = "#E8E8E8"
+	bg[INSENSITIVE] = "#E8E8E8"
+	bg[ACTIVE] = "#E8E8E8"
+	bg[SELECTED] = "#E8E8E8"
+	bg[PRELIGHT] = "#E8E8E8"
+	
+	bg_pixmap[NORMAL] = "Images/Panel/PanelBarLongLight.png"
+}
+
+style "panel-black" = "panel"
+{
+	fg[NORMAL] = "#BFBFBF"
+	fg[PRELIGHT] = "#000000"
+	
+	bg[NORMAL] = "#212121"
+	bg[INSENSITIVE] = "#212121"
+}
+
+style "panel-blue" = "panel"
+{
+	fg[NORMAL] = shade(0.97, @bg_color) 
+	
+	bg[NORMAL] = "#3D6490"
+	bg[SELECTED] = "#99A4AB"
 }
 
 #=========================================================
@@ -4440,10 +5008,14 @@ style "newwave-panelbuttons"
 #=========================================================
 # Popup Nautilus Widget
 #=========================================================
-style "newwave-nautilus-location"
+style "newwave-nautilus-location" = "newwave-wide-notexture"
 {
 	bg[NORMAL] = "#E5D0C3"
 	bg[INSENSITIVE] ="#E5D0C3"
+	
+	fg[NORMAL] = "#2F2F2F"
+	text[NORMAL] = "#2F2F2F"
+	text[PRELIGHT] = "#292929"
 	engine "pixmap" {
       
 		image
@@ -4471,7 +5043,8 @@ style "newwave-nautilus-location"
 		}
 	}
 }
-style "newwave-nautilus-location-text"
+# Not used
+style "newwave-nautilus-location-text" = "newwave-default-notexture"
 {
 	bg[NORMAL] = mix(0.70, shade (1.05,"#696969"), @bg_color)
 	bg[INSENSITIVE] = mix(0.80, shade (1.05,"#696969"), @bg_color)
@@ -4510,18 +5083,17 @@ style "metacity-frame"
 	bg[NORMAL] = "#696969"
 }
 
-# @author:dilomo@ This has to fix the Appearance manager crash
-#style "newwave-window"
-#{
-#        bg_pixmap[NORMAL] = "Images/Others/null.png"
-#}
-
 style "newwave-radiocheck" = "newwave-default"
 {
 	text[PRELIGHT]	= @base_color # Text on Mouseover
 }
 
 
+#style "newwave-infobar"
+#{
+#error_bg_color = "#000000"
+#}
+#class "GtkInfoBar" style "newwave-infobar"
 
 
 #=========================================================
@@ -4556,7 +5128,7 @@ class "GtkEntry"   					style "newwave-entry"
 class "GtkOldEditable" 					style "newwave-entry"
 class "GtkToolbar"   					style "newwave-toolbar" 
 class "GtkRange"     					style "newwave-range"
-class "GtkSpinButton"  					style : highest "newwave-spinbutton"
+class "GtkSpinButton"  					style "newwave-spinbutton"
 class "GtkScale"       					style "newwave-scale"
 class "GtkVScale"      					style "newwave-vscale"
 class "GtkHScale"      					style "newwave-hscale"
@@ -4586,11 +5158,11 @@ widget_class "*<GtkNotebook>*<GtkLayout>"       	style "newwave-notebook"
 widget_class "*<GtkButton>"      			style "newwave-button"
 widget_class "*<GtkLinkButton>"  			style : highest "newwave-toolbuttons"
 widget_class "*<GtkNotebook>"    			style "newwave-notebook"
-widget_class "*<GtkStatusbar>*"  			style "newwave-statusbar"
+# : highest needed for nautilus and other apps to have all gray text
+widget_class "*<GtkStatusbar>*"  			style : highest "newwave-statusbar" 
 
 
 widget_class "*<GtkComboBoxEntry>*"			style "newwave-comboboxentry"
-# TODO : compat testing
 widget_class "*<GtkCombo>*"         			style "newwave-comboboxentry"
 widget_class "*<GtkMenu>*"              		style "newwave-menu"
 class "*GtkMenubar*.<GtkMenu>" 				style : highest "newwave-menu-notop"
@@ -4609,9 +5181,8 @@ widget_class "*GtkToggleToolButton*"      		style : highest "newwave-toolbuttons
 widget_class "*GtkMenuToolButton*"      		style : highest "newwave-toolbuttons"
 widget_class "*GtkToolbar*Button"			style : highest "newwave-toolbuttons"
 
-widget_class "<SpinButton>"  				style : highest "newwave-spinbutton"
-widget_class "*GtkSpinButton*.*Entry*"  		style : highest "newwave-spinbutton"
-
+widget_class "*<SpinButton>*"  				style : highest "newwave-spinbutton"
+widget_class "*<GtkSpinButton>*"  		        style : highest "newwave-spinbutton"
 
 
 # @author:dilomo@ Here "*<GtkMenu>.<GtkMenuItem>*" GtkMenu is used 
@@ -4623,7 +5194,11 @@ widget_class"*.GtkAccelMenuItem.*"        	        style "newwave-menu-item"
 widget_class "*<GtkSeparatorMenuItem>*" 		style "newwave-separator-menu-item"
 
 widget_class "*.<GtkFrame>.<GtkLabel>" 			style "newwave-frame-title"
-widget_class "*.<GtkFrame>.*"				style "newwave-frame"
+widget_class "*.<GtkFrame>*"				style "newwave-frame"
+widget_class "*Gedit*.<GtkFrame>*"     			style "newwave-frame-gedit"
+# make frame of system monitor look better
+widget_class "*PanelApplet*.<GtkFrame>*" 		style "newwave-frame-panel"
+widget_class "*Gedit*.*Notify*"     			style "newwave-tooltips"
 widget_class "*.<GtkTreeView>*"        			style "newwave-treeview"
 widget_class "*.GtkFrame.GtkScrolledWindow.GtkTreeView" style "newwave-treeview"
 
@@ -4640,13 +5215,13 @@ widget_class "*Tool*GtkToggleButton"                    style "newwave-button"
 widget_class "*Tool*GtkButton"                          style "newwave-button"
 
 # Treeview header
-widget_class "*.<GtkTreeView>.<GtkButton>" 		style "newwave-treeview-header"
-widget_class "*.<GtkCTree>.<GtkButton>"    		style "newwave-treeview-header"
-widget_class "*.<GtkList>.<GtkButton>"     		style "newwave-treeview-header"
-widget_class "*.<GtkCList>.<GtkButton>"    		style "newwave-treeview-header"
+widget_class "*.<GtkTreeView>.<GtkButton>*" 		style :highest "newwave-treeview-header"
+widget_class "*.<GtkCTree>.<GtkButton>*"    		style :highest "newwave-treeview-header"
+widget_class "*.<GtkList>.<GtkButton>*"     		style :highest "newwave-treeview-header"
+widget_class "*.<GtkCList>.<GtkButton>*"    		style :highest "newwave-treeview-header"
 # Workarounds for Evolution
-widget_class "*.ETable.ECanvas"    			style "newwave-treeview-header"
-widget_class "*.ETree.ECanvas"    			style "newwave-treeview-header"
+widget_class "*.ETable.ECanvas*"    			style "newwave-treeview-header"
+widget_class "*.ETree.ECanvas*"    			style "newwave-treeview-header"
 
 
 
@@ -4668,15 +5243,18 @@ widget "gtk-tooltip*" 					style "newwave-tooltips"
 # Special case the nautilus-extra-view-widget
 # ToDo: A more generic approach for all applications that have a widget like this.
 widget "*.nautilus-extra-view-widget*" 		style : highest "newwave-nautilus-location"
-widget "*.nautilus-extra-view-widget" 			style : highest "newwave-nautilus-location"
+widget "*.nautilus-extra-view-widget" 		style : highest "newwave-nautilus-location"
 
 #widget_class "*MozillaGtkWidget*MenuBar*"	        style :highest "newwave-menubar"#-mozilla"
 #widget "MozillaGtkWidget*Menu*"	                style :highest "newwave-menu-item-mozilla"
 
 # @author: gp, Special case to set color backgroud in Nautilus Sidebar.
-style "newwave-nautilus-sidebar"
+style "newwave-nautilus-sidebar" = "newwave-wide-notexture"
 {
   GtkTreeView::even_row_color = @bg_color
+  #fg[NORMAL] = darker(@bg_color)
+  
+  
   # Make the sep line fade out
   engine "pixmap"
   {
@@ -4713,7 +5291,7 @@ style "newwave-nautilus-sidebar"
     	  	function		= HANDLE
     	  	recolorable		= TRUE
     	  	state                   = ACTIVE
-       	  	overlay_file		= "Images/Panel/handle-v-pressed.png"
+       	  	overlay_file		="Images/Others/null.png"
      	  	overlay_stretch		= FALSE
       	  	orientation		= VERTICAL
     	}
@@ -4722,7 +5300,7 @@ style "newwave-nautilus-sidebar"
     	  	function		= HANDLE
     	  	recolorable		= TRUE
     	  	state                   = INSENSITIVE
-       	  	overlay_file		= "Images/Panel/handle-v-insens.png"
+       	  	overlay_file		= "Images/Others/null.png"
      	  	overlay_stretch		= FALSE
       	  	orientation		= VERTICAL
     	}
@@ -4730,62 +5308,33 @@ style "newwave-nautilus-sidebar"
  }
 }
 
-style "newwave-nautilus-sidebar-handles"
+style "nautilus-splitter"
 {
-  engine "pixmap"
-  {
-      # TODO: Make the handle be a vert line in order to better separate nautilus files view
-      ## vertical handle
-    	image
-    	{
-    	  	function		= HANDLE
-    	  	recolorable		= TRUE
-    	  	state                   = NORMAL
-       	  	overlay_file		= "Images/Others/null.png"
-     	  	overlay_stretch		= FALSE
-      	  	orientation		= VERTICAL
-    	}
-    	image
-    	{
-    	  	function		= HANDLE
-    	  	recolorable		= TRUE
-    	  	state                   = PRELIGHT
-       	  	overlay_file		= "Images/Others/null.png"
-     	  	overlay_stretch		= FALSE
-      	  	orientation		= VERTICAL
-    	}
-    	image
-    	{
-    	  	function		= HANDLE
-    	  	recolorable		= TRUE
-    	  	state                   = ACTIVE
-       	  	overlay_file		= "Images/Panel/handle-v-pressed.png"
-     	  	overlay_stretch		= FALSE
-      	  	orientation		= VERTICAL
-    	}
-    	image
-    	{
-    	  	function		= HANDLE
-    	  	recolorable		= TRUE
-    	  	state                   = INSENSITIVE
-       	  	overlay_file		= "Images/Panel/handle-v-insens.png"
-     	  	overlay_stretch		= FALSE
-      	  	orientation		= VERTICAL
-    	}
-      
-    }
+
+	bg[NORMAL]	= "#ffffff"
+	bg[PRELIGHT]	= "#ECECEC"
+	engine "mist" {}
 }
 
+#widget	"NautilusNavigationWindow.*.NautilusHorizontalSplitter"	style "nautilus-splitter"
+
+widget_class "NautilusNavigationWindow*" style "newwave-default-notexture"
+widget_class "NautilusNavigationWindow*.*GtkMenuBar*" style "newwave-menubar"
+
 widget_class "NautilusNavigationWindow.GtkTable.NautilusHorizontalSplitter.NautilusSidePane.GtkNotebook.*" style "newwave-nautilus-sidebar"
+widget_class "NautilusNavigationWindow.GtkTable.NautilusHorizontalSplitter.NautilusSidePane.*" style "newwave-nautilus-sidebar"
 #widget_class "NautilusNavigationWindow.GtkTable.NautilusHorizontalSplitter.NautilusSidePane.*" style "newwave-nautilus-sidebar-handles"
+
 widget_class "NautilusNavigationWindow.GtkTable.NautilusHorizontalSplitter.NautilusSidePane.GtkNotebook.*Tree*" style "newwave-treeview-nautilus-sidebar"
+#widget_class "*NautilusNavigationWindow*.<GtkFrame>"     			style "newwave-frame-gedit"
 
 
 style "newwave-nautilus-filemanager"
 {
   #bg[NORMAL] = "##FFE68D"
   #base[NORMAL] = "#FF9E9E"
-  bg_pixmap[NORMAL] = "Images/MenuMenubar/combomenu.png"
+  #bg_pixmap
+  
 }
 #widget_class "NautilusNavigationWindow.GtkTable.NautilusHorizontalSplitter.*FM*View.*" style "newwave-nautilus-filemanager"
 
@@ -4855,7 +5404,6 @@ style "newwave-popupmenu-workaround"
 widget "*.gtk-combobox-popup-menu"  style :highest  "newwave-popupmenu-workaround"
 
 
-
 # Work around the usage of GtkLabel inside GtkListItems to display text.
 # This breaks because the label is shown on a background that is based on the
 # base color set.
@@ -4909,7 +5457,7 @@ widget_class "*<GtkListItem>*" 				style "newwave-fg-is-text-color-workaround"
 widget_class "*<GtkCList>" 				style "newwave-fg-is-text-color-workaround"
 
 
-style "newwave-evo-new-button-workaround"
+style "newwave-evo-new-button-workaround" = "newwave-default"
 {
 	xthickness = 3
 	ythickness = 3
@@ -4950,11 +5498,22 @@ style "newwave-evo-new-button-workaround"
 # Fix the toolbar by using flat style 
 widget_class "*EShellWindow.GtkVBox.BonoboDock.BonoboDockBand.BonoboDockItem*" style "newwave-evo-new-button-workaround"
 #Fix the New button that was broken when fixing the toolbar
-widget_class "*EShellWindow.GtkVBox.BonoboDock.BonoboDockBand.BonoboDockItem.InternalToolbar.BonoboUIToolbarControlItem.GtkVBox.BonoboWidget.BonoboSocket.BonoboPlug.EComboButton*"  style:highest  "newwave-button"  
+widget_class "*EShellWindow.GtkVBox.BonoboDock.BonoboDockBand.BonoboDockItem.InternalToolbar.BonoboUIToolbarControlItem.GtkVBox.BonoboWidget.BonoboSocket.BonoboPlug.EComboButton*"  style:highest  "newwave-toolbuttons"  
 # Fix the menu that was broken when fixing the toolbar
 widget_class "*EShellWindow.GtkVBox.BonoboDock.BonoboDockBand.BonoboDockItem.GtkMenuBar*" style "newwave-menubar"
 # Fix the double entry search box in the top right corner
-widget_class "*EShellWindow.GtkVBox.BonoboDock.GtkVBox.GtkHPaned.GtkNotebook.BonoboWidget.BonoboSocket.BonoboPlug.EMFolderBrowser.EFilterBar.GtkHBox.GtkHBox.EIconEntry.GtkHBox.GtkEntry" style  :highest "newwave-entry-nofocus"
+#widget_class "*EShellWindow.GtkVBox.BonoboDock.GtkVBox.GtkHPaned.GtkNotebook.BonoboWidget.BonoboSocket.BonoboPlug.EMFolderBrowser.EFilterBar.GtkHBox.GtkHBox.EIconEntry.GtkHBox.GtkEntry" style  :highest "newwave-entry-nofocus"
+# The contacts search box
+#widget_class "*EShellWindow.GtkVBox.BonoboDock.GtkVBox.GtkHPaned.GtkNotebook.BonoboWidget.BonoboSocket.BonoboPlug.*.EFilterBar.GtkHBox.GtkHBox.EIconEntry.GtkHBox.GtkEntry" style  :highest "newwave-entry-nofocus"
+
+widget_class "*EShellWindow.GtkVBox.BonoboDock.GtkVBox.GtkHPaned.GtkNotebook.BonoboWidget.BonoboSocket.BonoboPlug.*.EIconEntry.GtkHBox.GtkEntry" style  :highest "newwave-entry-nofocus"
+
+# Restyle the new mail window a bit
+widget_class "*EMsgComposer*GtkToolbar" style  "newwave-toolbar-noimage-small"
+widget_class "*EMsgComposer*GtkToolbar*" style  :highest "newwave-button"
+
+widget "*EMsgComposer*main-toolbar*" style  :highest "newwave-toolbuttons"
+widget "*EMsgComposer*main-toolbar" style  :highest "newwave-toolbar"
 
 
 style "newwave-brasero-fix"
@@ -4965,13 +5524,20 @@ widget "*BraseroNotify*" style "newwave-brasero-fix"
 
 
 
+
+
+
+
+
 #=========================================================
 # Panel Matches 
 #=========================================================
+#---NWC-START---#
+# Match the entries that might appear in the gnome panel as well as the dictionary applet
+widget_class "*Panel*Entry*" style "newwave-panel-entry"
+widget_class "*GdictApp*Entry*" style "newwave-panel-entry"
 
-
-
-class "*Mail*" 			        style "panel"
+class "*Panel*Mail*" 			style "panel"
 class "*Tray*" 				style "panel"
 class "*tray*" 				style "panel"
 widget_class "*Tray*" 			style "panel"
@@ -4980,17 +5546,18 @@ widget "*TrayIcon*" 			style "panel"
 class "*Panel*Applet*" 			style "panel"
 widget_class "*Panel*GtkToggleButton" 	style "panel"
 widget_class "*Panel*GtkButton" 	style "panel"
-widget_class "*.Panel*Button*GtkLabel" style "panel"
+widget_class "*.Panel*Button*GtkLabel"  style "panel"
 widget_class "*.Panel*GtkLabel" 	style "panel"
 widget "*PanelWidget*" 			style "panel"
 widget "*PanelApplet*" 			style "panel"
 class  "PanelApp*" 			style "panel"
 class  "PanelToplevel*" 		style "panel"
-widget_class "*Mail*" 			style "panel"
+# use this to fix Evolution proiblem
+widget_class "*Panel*Mail*" 		style "panel"
 widget_class "*Netstatus*" 		style "panel"
 widget_class "*Tomboy*Tray*" 		style "panel"
 widget "*fast-user-switch*" 		style "panel"
-widget_class "*PanelToplevel*"         style "panel"
+widget_class "*PanelToplevel*"          style "panel"
 class "Xfce*Panel*" 			style "panel"
 widget_class "*Xfce*Panel*" 		style "panel"
 widget_class "*PanelApplet*" 		style "panel"
@@ -5001,15 +5568,27 @@ widget_class "*FreqApplet*"		style "panel"
 #(TODO:) Fixed with larger image but if the drawer is 
 #bigger than the image the ugly repeating will appear
 #
-#widget_class "*DrawerApplet*"		style "panel-nopixmap"
+#widget_class "*DrawerApplet*"		style "panel"
 
 widget_class "*Panel*GtkToggleButton" 		        style "newwave-panelbuttons"
 widget        "*.tasklist-button" 			style "newwave-panelbuttons"
 widget_class "*PanelToplevel*Button" 		        style "newwave-panelbuttons"
 widget_class "*Xfce*Panel*.GtkToggleButton" 	        style "newwave-panelbuttons"
-widget_class "*Xfce*NetkTasklist*GtkToggleButton"      style "newwave-panelbuttons"
-
+widget_class "*Xfce*NetkTasklist*GtkToggleButton"       style "newwave-panelbuttons"
 
 # @author:dilomo@ Only testing this as it is alpha software. 
 #widget "*.globalmenu-applet-eventbox"                  style : highest "panel"
 
+#---NWC-END---#
+
+
+#=========================================================
+# Include custom app themeing
+#=========================================================
+
+#---NWC-START---#
+include "Custom/totem/totem.rc"
+include "Custom/inkscape/inkscape.rc"
+include "Custom/gsr/gsr.rc"
+include "Custom/smonitor/smonitor.rc"
+#---NWC-END---#

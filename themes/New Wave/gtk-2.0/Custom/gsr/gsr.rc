@@ -1,0 +1,20 @@
+# The gnome sound recorder statusbar fix
+
+#remove shadow in
+style "newwave-frame-gsr" = "newwave-frame"
+{
+engine "pixmap"
+	{
+
+	image
+	{
+		function		= SHADOW
+		recolorable		= TRUE
+		file			= "null.png"
+		border			= { 1, 1, 1, 1}
+		stretch			= TRUE
+	}
+	
+	}	
+}
+widget_class "GSRWindow*GtkFrame" 	style "newwave-frame-gsr"

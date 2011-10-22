@@ -1,0 +1,60 @@
+style "newwave-toolbar-inkscape-top" = "newwave-toolbar"
+{
+        xthickness            			= 2
+        ythickness            			= 2
+	
+	engine "pixmap"
+	{
+
+		image
+		{
+			function	= BOX
+			state           = INSENSITIVE
+			file		= "toolbar.png" 
+			border		= { 2, 2, 1, 1}
+			stretch		= TRUE
+    		}
+
+		image
+		{
+			function	= BOX
+			file		= "toolbar-top.png" 
+			border		= { 2, 2, 1, 1}
+			stretch		= TRUE
+    		}
+ 	}
+ 	
+ 	
+}
+style "newwave-toolbar-inkscape-bottom" = "newwave-toolbar"
+{
+        xthickness            			= 2
+        ythickness            			= 2
+	
+	engine "pixmap"
+	{
+
+		image
+		{
+			function	= BOX
+			state           = INSENSITIVE
+			file		= "toolbar.png" 
+			border		= { 2, 2, 1, 1}
+			stretch		= TRUE
+    		}
+
+		image
+		{
+			function	= BOX
+			file		= "toolbar-bottom.png" 
+			border		= { 2, 2, 1, 1}
+			stretch		= TRUE
+    		}
+ 	}
+ 	
+ 	
+}
+
+widget "gtkmm_*CommandsToolbar*" 		style "newwave-toolbar-inkscape-top"
+widget "gtkmm_*SnapToolbar*" 			style "newwave-toolbar-inkscape-bottom"
+

@@ -1,0 +1,7 @@
+# This file fixes some issues in the System Monitor dialog
+
+style "newwave-gsm-color-button" = "newwave-default-notexture"
+{
+	bg[NORMAL] = "#F2F2F2"	
+}
+class "*GSMColorButton*" style "newwave-gsm-color-button"

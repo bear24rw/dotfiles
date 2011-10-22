@@ -36,6 +36,5 @@ Comment[sv]=Ett vackert och futuristiskt tema.
 GtkTheme=New Wave
 MetacityTheme=New Wave
 IconTheme=Humanity-Dark
-GtkColorScheme=fg_color:#101010101010,bg_color:#e5e5e5e5e5e5,text_color:#1a1a1a1a1a1a,base_color:#ffffffffffff,selected_fg_color:#1a1a1a1a1a1a,selected_bg_color:#ffff9697567a,tooltip_fg_color:#333306060606,tooltip_bg_color:#ffffe6e6c4c4
 CursorTheme=default	
 CursorSize=18

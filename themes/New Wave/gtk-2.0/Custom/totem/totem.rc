@@ -1,0 +1,8 @@
+style "newwave-totem-box" = "newwave-default"
+{
+	bg[NORMAL] = "#B0B0B0"
+	fg[NORMAL] = "black"
+}
+
+widget "totem_*_window*" 		style "newwave-totem-box"
+widget "totem_*_window*menubar*"	style "newwave-menubar"
