@@ -1,4 +1,4 @@
-include "~/.themes/New Wave/gtk-2.0/gtkrc"
+include "/home/user/.themes/New Wave/gtk-2.0/gtkrc"
 
 gtk-icon-theme-name = "Humanity-Dark"
 
