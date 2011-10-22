@@ -1,0 +1,41 @@
+[Desktop Entry]
+Version=1.5
+Encoding=UTF-8
+Type=X-GNOME-Metatheme
+Name=New Wave
+Comment=Feel the difference!
+Name[bg_BG]=Нова Вълна
+Comment[bg_BG]=Почувствай разликата!
+Name[ru]=Новая Волна
+Comment[ru]=Красивая, футуристическая тема.
+Name[de]=Neue Welle
+Comment[de]=Ein schönes futuristisches Thema.
+Name[da]=New Wave
+Comment[da]=Et pænt futuristisk tema.
+Name[fr]=New Wave
+Comment[fr]=Un joli thème futuriste.
+Name[ro]=New Wave
+Name[uk]=New Wave
+Name[ko]=뉴 웨이브
+Comment[ko]=미래의 테마
+Name[ja]=New Wave
+Name[es]=Nueva ola
+Comment[es]=Un bonito tema futurístico.
+Name[it]=New Wave
+Comment[it]=Un tema futuristico carino.
+Name[mk]=New Wave
+Name[lv]=New Wave
+Name[pl]=New Wave
+Name[zh_HK]=New Wave
+Name[ar]=New Wave
+Name[sv]=New Wave
+Comment[sv]=Ett vackert och futuristiskt tema.
+
+
+[X-GNOME-Metatheme]
+GtkTheme=New Wave
+MetacityTheme=New Wave
+IconTheme=Humanity-Dark
+GtkColorScheme=fg_color:#101010101010,bg_color:#e5e5e5e5e5e5,text_color:#1a1a1a1a1a1a,base_color:#ffffffffffff,selected_fg_color:#1a1a1a1a1a1a,selected_bg_color:#ffff9697567a,tooltip_fg_color:#333306060606,tooltip_bg_color:#ffffe6e6c4c4
+CursorTheme=default	
+CursorSize=18
