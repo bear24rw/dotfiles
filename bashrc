@@ -43,6 +43,7 @@ alias ls="ls --group-directories-first --color=auto -X -h"
 alias ll="ls -l"
 alias listbiggest="qsize -a -k | sort -n -k 6"
 alias mpdstatus="sudo strace -p `ps x -L | grep mpd | tail -n 2 | head -n 1 | awk '{print $2}'`"
+alias rrsync="rsync -avz --stats --progress"
 
 export PYTHONSTARTUP="$HOME/.pythonrc"
 
