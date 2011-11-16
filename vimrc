@@ -63,6 +63,9 @@ set showcmd
 " show matching braces
 set showmatch
 
+" highlight current line
+set cursorline
+
 " leave 4 lines on top or bottom when scrolling
 set scrolloff=4
 
