@@ -224,7 +224,7 @@ clientkeys = awful.util.table.join(
             c.maximized_horizontal = not c.maximized_horizontal
             c.maximized_vertical   = not c.maximized_vertical
         end),
-    awful.key({ modkey, "Shift"   }, ",",
+    awful.key({ modkey, "Shift"   }, "Left",
         function (c)
             local curidx = awful.tag.getidx(c:tags()[1])
             if curidx == 1 then
@@ -233,7 +233,7 @@ clientkeys = awful.util.table.join(
                 c:tags({screen[mouse.screen]:tags()[curidx - 1]})
             end
         end),
-    awful.key({ modkey, "Shift"   }, ".",
+    awful.key({ modkey, "Shift"   }, "Right",
         function (c)
             local curidx = awful.tag.getidx(c:tags()[1])
             if curidx == 9 then
