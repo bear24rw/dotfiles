@@ -190,14 +190,6 @@ globalkeys = awful.util.table.join(
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
-    awful.key({ modkey }, "x",
-              function ()
-                  awful.prompt.run({ prompt = "Run Lua code: " },
-                  mypromptbox[mouse.screen].widget,
-                  awful.util.eval, nil,
-                  awful.util.getdir("cache") .. "/history_eval")
-              end),
-
     -- Media
     awful.key({ "Control", "Shift" }, "Left", function() awful.util.spawn("ncmpcpp prev") end),
     awful.key({ "Control", "Shift" }, "Right", function() awful.util.spawn("ncmpcpp next") end),
