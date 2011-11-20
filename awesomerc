@@ -41,6 +41,10 @@ layouts =
     -- awful.layout.suit.max.fullscreen,
     -- awful.layout.suit.magnifier
 }
+
+-- Initialize previous layout to maximize
+prev_layout = awful.layout.suit.max
+
 -- }}}
 
 -- {{{ Tags
