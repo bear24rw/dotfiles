@@ -62,5 +62,3 @@ else
 fi
 
 eval $( dircolors -b $HOME/.ls_colors/LS_COLORS )
-
-set -o vi
