@@ -49,6 +49,9 @@ setopt EMACS
 # disable ctrl-s (breaks rtorrent)
 setopt NO_FLOW_CONTROL
 
+# = is needed for emerge
+unsetopt EQUALS
+
 #}}}
 
 #{{{ Key bindings
