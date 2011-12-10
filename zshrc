@@ -1,5 +1,7 @@
 autoload -U colors &&  colors
 
+eval $( dircolors -b $HOME/.ls_colors/LS_COLORS )
+
 #{{{ Tab completion
 
 autoload -Uz compinit && compinit
