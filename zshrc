@@ -12,6 +12,10 @@ zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:
 # add sbin to PATH so sudo can tab complete it
 PATH="/usr/sbin/:${PATH}"
 
+# tab complete known hosts
+hosts=(${${${(f)"$(<$HOME/.ssh/known_hosts)"}%%\ *}%%,*})
+zstyle ':completion:*:hosts' hosts $hosts
+
 #}}}
 
 #{{{ Aliases
