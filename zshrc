@@ -29,6 +29,7 @@ alias mount_desktop='sshfs -p44 -o reconnect -o follow_symlinks user@bear24rw.co
 alias ls='ls --group-directories-first --color=auto -X -h'
 alias ll='ls -l'
 alias rrsync='rsync -avz --stats --progress'
+alias grep='grep --color'
 
 #}}}
 
