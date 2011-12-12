@@ -2,6 +2,8 @@ autoload -U colors &&  colors
 
 eval $( dircolors -b $HOME/.ls_colors/LS_COLORS )
 
+export PYTHONSTARTUP="$HOME/.pythonrc"
+
 #{{{ Tab completion
 
 autoload -Uz compinit && compinit
