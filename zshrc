@@ -13,7 +13,7 @@ zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:
 PATH="/usr/sbin/:${PATH}"
 
 # tab complete known hosts
-hosts=(${${${(f)"$(<$HOME/.ssh/known_hosts)"}%%\ *}%%,*})
+hosts=(`sed 's/\[\|\]\| .*//g;s/,/ /g' .ssh/known_hosts | tr '\n' ' '`)
 zstyle ':completion:*:hosts' hosts $hosts
 
 #}}}
