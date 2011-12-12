@@ -9,6 +9,9 @@ autoload -Uz compinit && compinit
 # color partial completions
 zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==34=0}:${(s.:.)LS_COLORS}")';
 
+# add user scripts to path
+PATH="${HOME}/.scripts/:${PATH}"
+
 # add sbin to PATH so sudo can tab complete it
 PATH="/usr/sbin/:${PATH}"
 
