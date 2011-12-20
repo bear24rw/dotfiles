@@ -33,6 +33,9 @@ set number
 " 
 set foldmethod=marker
 
+" open folds when searching, etc...
+set foldopen=jump,mark,search,tag,undo
+
 " powerful backspaces
 set backspace=indent,eol,start
 
