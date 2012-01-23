@@ -1,7 +1,9 @@
 autoload zmv
 autoload -U colors &&  colors
 
-eval $( dircolors -b $HOME/.ls_colors/LS_COLORS )
+PATH="/opt/local/bin:/opt/local/sbin:${PATH}"
+
+eval $( gdircolors -b $HOME/.ls_colors/LS_COLORS )
 
 export PYTHONSTARTUP="$HOME/.pythonrc"
 
@@ -73,7 +75,7 @@ alias mount_desktop='sshfs -p44 -o reconnect -o follow_symlinks user@192.168.1.1
 alias mount_ucfilespace='sshfs -o reconnect -o follow_symlinks thrunml@ucfilespace.uc.edu:/Network/Servers/ucfilespace.uc.edu/Home/t/thrunml/ ~/mnt/ucfilespace'
 alias mount_uceng='sshfs -o reconnect -o follow_symlinks thrunml@virtulab.ceas1.uc.edu:/home/thrunml/ ~/mnt/uceng'
 
-alias ls='ls --group-directories-first --color=auto -X -h --classify'
+alias ls='gls --group-directories-first --color=auto -X -h -v'
 alias ll='ls -l'
 alias lla='ll -a'
 alias rrsync='rsync -avz --stats --progress'
