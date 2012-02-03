@@ -138,8 +138,6 @@ command Wq wq
 command W w
 command Q q
 
-imap jj <ESC>  
-
 " yank from cursor to end of line
 nnoremap Y y$
 
