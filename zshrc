@@ -126,4 +126,4 @@ precmd () { vcs_info }
 
 #}}}
 
-PROMPT='%B%F{green}%n@%m %B%F{blue}%~ ${vcs_info_msg_0_}%F{blue}%# %b%f%k'
+PROMPT='%B%(!.%F{red}.%F{green})%n@%m %B%F{blue}%~ ${vcs_info_msg_0_}%F{blue}%# %b%f%k'
