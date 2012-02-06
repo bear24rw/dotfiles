@@ -121,12 +121,6 @@ if &term == "screen" || &term == "screen-bce" || &term == "screen-256color" || &
   set title
 endif
 
-" faster split resizing
-if bufwinnr(1)
-    map + <C-W>+
-    map - <C-W>-
-endif
-
 " better split switching
 map <C-j> <C-W>j
 map <C-k> <C-W>k
