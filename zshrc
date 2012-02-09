@@ -41,6 +41,7 @@ alias ls='ls --group-directories-first --color=auto -X -h -v'
 alias ll='ls -l'
 alias rrsync='rsync -avz --stats --progress'
 alias grep='grep --color'
+alias egrep='egrep --color'
 
 #}}}
 
