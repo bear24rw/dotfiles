@@ -105,6 +105,8 @@ setopt HIST_NO_STORE
 # don't execute a history expansion, just show it
 setopt HIST_VERIFY
 
+h() { if [ -z "$*" ]; then history 1; else history 1 | egrep "$@"; fi; }
+
 #}}}
 
 #{{{ VCS info in PS1
