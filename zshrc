@@ -43,6 +43,9 @@ alias rrsync='rsync -avz --stats --progress'
 alias grep='grep --color'
 alias egrep='egrep --color'
 
+alias lower='tr "[:upper:]" "[:lower:]"'
+alias upper='tr "[:lower:]" "[:upper:]"'
+
 #}}}
 
 #{{{ Options
