@@ -45,6 +45,7 @@ alias ll='ls -l'
 alias rrsync='rsync -avz --stats --progress'
 alias grep='grep --color'
 alias egrep='egrep --color'
+alias df='df -h'
 
 alias lower='tr "[:upper:]" "[:lower:]"'
 alias upper='tr "[:lower:]" "[:upper:]"'
