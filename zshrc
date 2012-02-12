@@ -19,7 +19,7 @@ PATH="${HOME}/.scripts/:${PATH}"
 PATH="/sbin/:/usr/sbin/:${PATH}"
 
 # tab complete known hosts
-hosts=(`sed 's/\[\|\]\| .*//g;s/,/\n/g;s/:.*$//g' .ssh/known_hosts | sort | uniq | tr '\n' ' '`)
+hosts=(`sed 's/\[\|\]\| .*//g;s/,/\n/g;s/:.*$//g' ~/.ssh/known_hosts | sort | uniq | tr '\n' ' '`)
 zstyle ':completion:*:hosts' hosts $hosts
 
 # case insensitive completion
