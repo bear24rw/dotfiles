@@ -132,8 +132,34 @@ zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
 zstyle ':vcs_info:*' enable git svn
 zstyle ':vcs_info:*' formats '%F{yellow}(%b%c%u%F{yellow}) '
 
-precmd () { vcs_info }
+#}}}
+
+#{{{ Terminal title
+
+function title_job() {
+    if [[ $TERM == 'screen'* ]]; then
+        print -Pn "\ek${1//\\/\\\\}\e\\"
+    else
+        print -Pn "\e]0;${1//\\/\\\\}\a"
+    fi
+}
+
+
+function title_path() {
+    if [[ $TERM == 'screen'* ]]; then
+        print -Pn "\ek%~\e\\"
+    else
+        print -Pn "\e]0;%n@%m: %~\a"
+    fi
+}
+
+# set the intial title
+title_path
 
 #}}}
+
+precmd() { vcs_info; title_path; }
+
+preexec() { title_job $1; }
 
 PROMPT='%B%(!.%F{red}.%F{green})%n@%m %B%F{blue}%~ ${vcs_info_msg_0_}%F{blue}%# %b%f%k'
