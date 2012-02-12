@@ -48,6 +48,9 @@ set incsearch
 " ignore case while searching
 set ignorecase
 
+" execpt when searching for upper case
+set smartcase
+
 " don't wrap words
 set textwidth=0
 
