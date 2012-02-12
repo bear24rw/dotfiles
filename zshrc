@@ -40,7 +40,7 @@ alias mount_server='sshfs -p69 -o reconnect -o follow_symlinks pwner@durknation.
 alias mount_home='sshfs -p44 -o reconnect -o follow_symlinks user@bear24rw.gotdns.com:/ ~/.mnt/backup'
 alias mount_desktop='sshfs -p44 -o reconnect -o follow_symlinks user@bear24rw.com:/ ~/mnt/desktop'
 
-alias ls='ls --group-directories-first --color=auto -X -h'
+alias ls='ls --group-directories-first --color=auto -X -h --classify'
 alias ll='ls -l'
 alias rrsync='rsync -avz --stats --progress'
 alias grep='grep --color'
