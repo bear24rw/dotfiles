@@ -71,6 +71,7 @@ set cursorline
 
 " leave 4 lines on top or bottom when scrolling
 set scrolloff=4
+set sidescrolloff=4
 
 " when buffer is brought to foregroup, remember undo history and marks
 set hidden
