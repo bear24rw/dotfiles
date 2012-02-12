@@ -60,6 +60,9 @@ set history=50
 " 1000 undo levels
 set undolevels=1000
 
+" persistent undo
+set undofile
+
 " show a ruler
 set ruler
 
