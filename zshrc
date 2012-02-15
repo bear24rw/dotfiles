@@ -5,6 +5,8 @@ eval $( dircolors -b $HOME/.ls_colors/LS_COLORS )
 
 export PYTHONSTARTUP="$HOME/.pythonrc"
 
+export MANPAGER="vimmanpager"
+
 #{{{ Tab completion
 
 autoload -Uz compinit && compinit
