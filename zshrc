@@ -13,10 +13,10 @@ autoload -Uz compinit && compinit
 zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==34=0}:${(s.:.)LS_COLORS}")';
 
 # add user scripts to path
-PATH="${HOME}/.scripts/:${PATH}:"
+PATH="${HOME}/.scripts:${PATH}:"
 
 # add sbin to PATH so sudo can tab complete it
-PATH="${PATH}:/sbin/:/usr/sbin/:"
+PATH="${PATH}:/sbin:/usr/sbin:"
 
 # tab complete known hosts
 hosts=(`sed 's/\[\|\]\| .*//g;s/,/\n/g;s/:.*$//g' ~/.ssh/known_hosts | sort | uniq | tr '\n' ' '`)
