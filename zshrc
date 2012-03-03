@@ -96,6 +96,11 @@ unsetopt EQUALS
 bindkey '\e[1~' beginning-of-line
 bindkey '\e[4~' end-of-line
 
+bindkey '' vi-forward-word
+bindkey '' vi-backward-word
+bindkey '' vi-backward-char
+bindkey '' vi-forward-char
+
 #}}}
 
 #{{{ History
