@@ -32,6 +32,9 @@ zstyle ':completion:*:processes-names' command 'ps -e -o comm='
 zstyle ':completion:*:processes' command 'ps -au$USER'
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;32'
 
+# completion options
+setopt COMPLETE_IN_WORD
+
 #}}}
 
 #{{{ Aliases
