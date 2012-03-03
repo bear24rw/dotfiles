@@ -42,13 +42,15 @@ setopt COMPLETE_IN_WORD
 alias ssh_server='ssh pwner@durknation.gotdns.com -p69'
 alias ssh_router='ssh admin@router'
 alias ssh_home='ssh user@bear24rw.gotdns.com -p 44'
-alias ssh_school='ssh thrunml@ucfilespace.uc.edu'
+alias ssh_ucfilespace='ssh thrunml@ucfilespace.uc.edu'
+alias ssh_uceng='ssh thrunml@virtulab.ceas1.uc.edu '
 alias ssh_tv='ssh media@durknation.gotdns.com -p337'
 alias ssh_desktop='ssh user@bear24rw.com -p44'
 
 alias mount_server='sshfs -p69 -o reconnect -o follow_symlinks pwner@durknation.gotdns.com:/ ~/mnt/server'
 alias mount_home='sshfs -p44 -o reconnect -o follow_symlinks user@bear24rw.gotdns.com:/ ~/.mnt/backup'
 alias mount_desktop='sshfs -p44 -o reconnect -o follow_symlinks user@bear24rw.com:/ ~/mnt/desktop'
+alias mount_school='sshfs -o reconnect -o follow_symlinks thrunml@virtulab.ceas1.uc.edu:/ ~/mnt/school'
 
 alias ls='ls --group-directories-first --color=auto -X -h --classify'
 alias ll='ls -l'
