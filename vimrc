@@ -1,6 +1,9 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" change leader key to comma
+let mapleader=","
+
 " enable all features
 set nocompatible
 
