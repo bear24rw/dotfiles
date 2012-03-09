@@ -153,6 +153,9 @@ set t_Co=256
 
 " use dark color scheme
 set bg=dark
+
+" line numbers are grey with no background
+highlight LineNr ctermfg=grey ctermbg=none
                
 " some nice color schemes
 let g:solarized_termcolors=256
