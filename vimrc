@@ -169,3 +169,9 @@ highlight Pmenu ctermbg=238 gui=bold
 
 " Gundo toggle
 nnoremap <F5> :GundoToggle<CR>
+
+" tabular shortcuts
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
