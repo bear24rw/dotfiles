@@ -154,22 +154,20 @@ set t_Co=256
 " use dark color scheme
 set bg=dark
 
-" line numbers are grey with no background
-highlight LineNr ctermfg=grey ctermbg=none
-               
 " some nice color schemes
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized
-"colorscheme desert256
-"colorscheme xoria256
 
+" line numbers are grey with black
+highlight LineNr ctermbg=0 ctermfg=235
+
+" current line highlighting
+highlight CursorLine ctermbg=234
 
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabLongestEnhanced = 1
 let g:SuperTabLongestHighlight = 1
-
-highlight Pmenu ctermbg=238 gui=bold
 
 " Gundo toggle
 nnoremap <F5> :GundoToggle<CR>
