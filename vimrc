@@ -1,14 +1,9 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-" change leader key to comma
-let mapleader=","
+" General {{{
 
-" enable all features
-set nocompatible
-
-" Wrap too long lines
-set wrap
+" Tabs {{{
 
 " Tabs are 2 characters
 set tabstop=4
@@ -21,26 +16,9 @@ set smartindent
 " spaces instead of tabs
 set expandtab
 
-" guess indentation
-set autoindent
-set smartindent
+" }}}
 
-" don't reset cursor to start of line when moving around
-set nostartofline
-
-" show line numbers
-set number
-
-" Fold using markers "{{{
-" like this"}}}
-" 
-set foldmethod=marker
-
-" open folds when searching, etc...
-set foldopen=jump,mark,search,tag,undo
-
-" powerful backspaces
-set backspace=indent,eol,start
+" Search {{{
 
 " highlight the searchterms
 set hlsearch
@@ -53,6 +31,33 @@ set ignorecase
 
 " execpt when searching for upper case
 set smartcase
+
+" }}}
+
+" enable all features
+set nocompatible
+
+" Wrap too long lines
+set wrap
+
+" guess indentation
+set autoindent
+set smartindent
+
+" don't reset cursor to start of line when moving around
+set nostartofline
+
+" show line numbers
+set number
+
+" fold using {{{ }}}
+set foldmethod=marker
+
+" open folds when searching, etc...
+set foldopen=jump,mark,search,tag,undo
+
+" powerful backspaces
+set backspace=indent,eol,start
 
 " don't wrap words
 set textwidth=0
@@ -88,6 +93,19 @@ set hidden
 " auto-detect the filetype
 filetype plugin indent on
 
+" }}}
+
+" Tab completion {{{
+
+" Always show the menu, insert longest match
+set completeopt=menuone,longest
+
+" Expand the command line using tab
+set wildchar=<Tab>
+set wildmode=longest:full
+set wildmenu
+
+" tab complete text
 set omnifunc=syntaxcomplete#Complete
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -98,27 +116,13 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabLongestEnhanced = 1
+let g:SuperTabLongestHighlight = 1
 
-" Always show the menu, insert longest match
-set completeopt=menuone,longest
+"}}}
 
-" Expand the command line using tab
-set wildchar=<Tab>
-set wildmode=longest:full
-set wildmenu
-
-" hide toolbar in GUI mode
-if has("gui_running")
-    set go-=T
-end
-
-" When editing a file, always jump to the last known cursor position.
-" Don't do it when the position is invalid or when inside an event handler
-" (happens when dropping a file on gvim).
-autocmd BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal g`\"" |
-  \ endif
+" Title bar {{{
 
 let &titleold=getcwd()
 set titlestring=%t 
@@ -130,6 +134,13 @@ endif
 if &term == "screen" || &term == "screen-bce" || &term == "screen-256color" || &term == "xterm"
   set title
 endif
+
+" }}}
+
+" Keybindings {{{
+
+" change leader key to comma
+let mapleader=","
 
 " better split switching
 map <C-j> <C-W>j
@@ -144,6 +155,19 @@ command Q q
 
 " yank from cursor to end of line
 nnoremap Y y$
+
+" Gundo toggle
+nnoremap <F5> :GundoToggle<CR>
+
+" tabular shortcuts
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
+
+" }}}
+
+" Color {{{
 
 " syntax highlight
 syntax on
@@ -165,15 +189,17 @@ highlight LineNr ctermbg=0 ctermfg=235
 " current line highlighting
 highlight CursorLine ctermbg=234
 
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabLongestEnhanced = 1
-let g:SuperTabLongestHighlight = 1
+" }}}
 
-" Gundo toggle
-nnoremap <F5> :GundoToggle<CR>
+" hide toolbar in GUI mode
+if has("gui_running")
+    set go-=T
+end
 
-" tabular shortcuts
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
+" When editing a file, always jump to the last known cursor position.
+" Don't do it when the position is invalid or when inside an event handler
+" (happens when dropping a file on gvim).
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
