@@ -156,6 +156,7 @@ set bg=dark
                
 " some nice color schemes
 let g:solarized_termcolors=256
+let g:solarized_termtrans=1
 colorscheme solarized
 "colorscheme desert256
 "colorscheme xoria256
