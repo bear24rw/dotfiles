@@ -18,7 +18,7 @@ zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:
 PATH="${HOME}/.scripts:${PATH}:"
 
 # add user binaries to path
-PATH="${HOM}/.bin:${PATH}:"
+PATH="${HOME}/.bin:${PATH}:"
 
 # add sbin to PATH so sudo can tab complete it
 PATH="${PATH}:/sbin:/usr/sbin:"
