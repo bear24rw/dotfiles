@@ -7,6 +7,8 @@ export PYTHONSTARTUP="$HOME/.pythonrc"
 
 export MANPAGER="vimmanpager"
 
+export GDFONTPATH=/usr/share/fonts/ttf-bitstream-vera
+
 #{{{ Tab completion
 
 autoload -Uz compinit && compinit
