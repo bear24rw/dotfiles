@@ -60,6 +60,7 @@ alias mount_uceng='sshfs -o reconnect -o follow_symlinks thrunml@virtulab.ceas1.
 
 alias ls='ls --group-directories-first --color=auto -X -h --classify'
 alias ll='ls -l'
+alias lla='ll -a'
 alias rrsync='rsync -avz --stats --progress'
 alias grep='grep --color'
 alias egrep='egrep --color'
