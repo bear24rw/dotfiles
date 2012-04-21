@@ -66,6 +66,7 @@ alias grep='grep --color'
 alias egrep='egrep --color'
 alias df='df -h'
 alias watch='watch -n1 -d --color'
+alias lsdir='for dir in *;do;if [ -d $dir ];then;du -hsL $dir 2>/dev/null;fi;done'
 
 alias lower='tr "[:upper:]" "[:lower:]"'
 alias upper='tr "[:lower:]" "[:upper:]"'
