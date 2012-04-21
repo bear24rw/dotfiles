@@ -1,4 +1,4 @@
 #!/bin/zsh
 
-sudo mount -t vfat -o umask=0022,gid=1002,uid=1000 /dev/disk/by-id/usb-HTC_Incredible_HT04KHJ03477-0:1 /home/user/mnt/phone/internal
+sudo mount -t vfat -o umask=0022,gid=1002,uid=1000 /dev/disk/by-id/usb-HTC_Incredible_HT04KHJ03477-0:1 /home/user/mnt/phone/emmc
 sudo mount -t vfat -o umask=0022,gid=1002,uid=1000 /dev/disk/by-id/usb-HTC_Incredible_HT04KHJ03477-0:0 /home/user/mnt/phone/sdcard
