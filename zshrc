@@ -100,6 +100,9 @@ setopt NO_FLOW_CONTROL
 # = is needed for emerge
 unsetopt EQUALS
 
+# case insensitive globbing
+setopt NO_CASE_GLOB
+
 #}}}
 
 #{{{ Key bindings
