@@ -26,7 +26,7 @@
 	url = https://github.com/gregsexton/MatchTag
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
-	url = git://github.com/sjl/gundo.vim.git
+	url = https://github.com/sjl/gundo.vim.git
 [submodule "vim/bundle/tcomment"]
 	path = vim/bundle/tcomment
-	url = git://github.com/tomtom/tcomment_vim.git
+	url = https://github.com/tomtom/tcomment_vim.git
