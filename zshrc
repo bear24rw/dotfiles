@@ -79,6 +79,8 @@ alias upper='tr "[:lower:]" "[:upper:]"'
 
 alias back='popd'
 
+alias nowrap='cut -c -$COLUMNS'
+
 #}}}
 
 #{{{ Options
