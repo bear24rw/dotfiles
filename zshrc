@@ -25,6 +25,8 @@ PATH="${HOME}/.bin:${PATH}:"
 # add sbin to PATH so sudo can tab complete it
 PATH="${PATH}:/sbin:/usr/sbin:"
 
+PATH="${HOME}/eagle-5.10.0/bin:${PATH}:"
+
 # tab complete known hosts
 hosts=(`sed 's/\[\|\]\| .*//g;s/,/\n/g;s/:.*$//g' ~/.ssh/known_hosts | sort | uniq | tr '\n' ' '`)
 zstyle ':completion:*:hosts' hosts $hosts
