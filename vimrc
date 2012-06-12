@@ -93,6 +93,9 @@ set hidden
 " auto-detect the filetype
 filetype plugin indent on
 
+" disable auto commenting
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 " }}}
 
 " Tab completion {{{
