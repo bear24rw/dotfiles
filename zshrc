@@ -9,12 +9,7 @@ export MANPAGER="vimmanpager"
 
 export GDFONTPATH=/usr/share/fonts/ttf-bitstream-vera
 
-#{{{ Tab completion
-
-autoload -Uz compinit && compinit
-
-# color partial completions
-zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==34=0}:${(s.:.)LS_COLORS}")';
+#{{{ PATH
 
 # add user scripts to path
 PATH="${HOME}/.scripts:${PATH}:"
@@ -26,6 +21,15 @@ PATH="${HOME}/.bin:${PATH}:"
 PATH="${PATH}:/sbin:/usr/sbin:"
 
 PATH="${HOME}/eagle-5.10.0/bin:${PATH}:"
+
+#}}}
+
+#{{{ Tab completion
+
+autoload -Uz compinit && compinit
+
+# color partial completions
+zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==34=0}:${(s.:.)LS_COLORS}")';
 
 # tab complete known hosts
 hosts=(`sed 's/\[\|\]\| .*//g;s/,/\n/g;s/:.*$//g' ~/.ssh/known_hosts | sort | uniq | tr '\n' ' '`)
