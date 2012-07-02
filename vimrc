@@ -37,8 +37,8 @@ set smartcase
 " enable all features
 set nocompatible
 
-" Wrap too long lines
-set wrap
+" dont wrap long lines
+set nowrap
 
 " guess indentation
 set autoindent
