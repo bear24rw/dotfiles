@@ -194,6 +194,18 @@ highlight CursorLine ctermbg=234
 
 " }}}
 
+" Status Line {{{
+
+" powerline plugin needs two lines
+set laststatus=2
+
+" encoding
+set encoding=utf-8
+
+let g:Powerline_symbols = "compatible"
+
+" }}}
+
 " hide toolbar in GUI mode
 if has("gui_running")
     set go-=T
