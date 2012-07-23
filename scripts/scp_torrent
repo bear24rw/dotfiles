@@ -1,0 +1,1 @@
+scp -P69 $1 pwner@durknation.gotdns.com:/mnt/drive_1/torrents/watch/
