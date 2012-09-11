@@ -192,6 +192,10 @@ highlight LineNr ctermbg=0 ctermfg=235
 " current line highlighting
 highlight CursorLine ctermbg=234
 
+" highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
 " }}}
 
 " Status Line {{{
