@@ -1,1 +1,1 @@
-scp -P69 "`echo $1 | sed 's/ /\\ /g'`" pwner@durknation.gotdns.com:/mnt/drive_1/torrents/watch/
+scp -P69 "$@" pwner@durknation.gotdns.com:/mnt/drive_1/torrents/watch/
