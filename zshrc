@@ -22,6 +22,9 @@ PATH="${PATH}:/sbin:/usr/sbin:"
 
 PATH="${HOME}/eagle-5.10.0/bin:${PATH}:"
 
+# altera
+PATH="/opt/altera/quartus/bin:${PATH}:"
+
 #}}}
 
 #{{{ Tab completion
