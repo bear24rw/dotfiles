@@ -24,6 +24,10 @@ PATH="${HOME}/eagle-5.10.0/bin:${PATH}:"
 
 # altera
 PATH="/opt/altera/quartus/bin:${PATH}:"
+PATH="/media/other/opt/altera/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin:${PATH}:"
+PATH="/media/other/opt/altera/nios2eds/sdk2/bin/:${PATH}:"
+PATH="/media/other/opt/altera/nios2eds/bin/:${PATH}:"
+PATH="/media/other/opt/altera/nios2eds/:${PATH}:"
 
 #}}}
 
