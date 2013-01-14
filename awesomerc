@@ -58,6 +58,21 @@ end
 -- Create a textclock widget
 mytextclock = awful.widget.textclock({ align = "right" }, "%a %b %d, %I:%M", 60)
 
+-- Create a battery monitor widget
+mybattmon = widget({ type = "textbox" })
+mytimer = timer({ timeout = 10 })
+mytimer:add_signal("timeout", function()
+    file = io.open("/proc/battcheck", "r")
+    if file == nil then
+        io.close()
+        mybattmon.text = ""
+    else
+        mybattmon.text = file:read()
+        file:close()
+    end
+end)
+mytimer:start()
+
 -- Create a systray
 mysystray = widget({ type = "systray" })
 
@@ -130,6 +145,7 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         mytextclock,
+        mybattmon,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
