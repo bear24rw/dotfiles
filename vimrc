@@ -151,6 +151,8 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+command WA wa
+command Wa wa
 command WQ wq
 command Wq wq
 command W w
