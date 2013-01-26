@@ -13,6 +13,11 @@ for name in *; do
         continue
     fi
 
+    # ignore update script
+    if [ "$name" = "update_submodules.sh" ]; then
+        continue
+    fi
+
     target="$HOME/.$name"
 
     # check if target already exists
