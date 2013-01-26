@@ -197,6 +197,14 @@ highlight LineNr ctermbg=0 ctermfg=235
 " current line highlighting
 highlight CursorLine ctermbg=234
 
+" highlight trailing whitepace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
 " }}}
 
 " Status Line {{{
