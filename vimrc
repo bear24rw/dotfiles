@@ -170,6 +170,9 @@ vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 
+" Toggle paste mode
+nmap <silent> ,p :set invpaste<CR>:set paste?<CR>
+
 " }}}
 
 " Color {{{
