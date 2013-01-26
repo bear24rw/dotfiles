@@ -9,6 +9,8 @@ export MANPAGER="vimmanpager"
 
 export GDFONTPATH=/usr/share/fonts/ttf-bitstream-vera
 
+export SDL_AUDIODRIVER=alsa
+
 #{{{ PATH
 
 # add user scripts to path
