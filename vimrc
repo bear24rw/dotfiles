@@ -219,9 +219,10 @@ let g:Powerline_symbols = "compatible"
 
 " }}}
 
-" hide toolbar in GUI mode
+" gvim specific options
 if has("gui_running")
     set go-=T
+    set guifont=Bitstream\ Vera\ Sans\ Mono\ 14
 end
 
 " When editing a file, always jump to the last known cursor position.
