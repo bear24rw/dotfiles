@@ -134,6 +134,10 @@ bindkey '' vi-backward-word
 bindkey '' vi-backward-char
 bindkey '' vi-forward-char
 
+# control+j is hard mapped to line feed?
+#bindkey ' ' down-history
+bindkey '' up-history
+
 #}}}
 
 #{{{ History
