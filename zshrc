@@ -140,8 +140,8 @@ bindkey '' vi-forward-char
 
 HISTFILE=~/.history
 
-SAVEHIST=50000
-HISTSIZE=50000
+SAVEHIST=500000
+HISTSIZE=500000
 
 # write after each command
 setopt INC_APPEND_HISTORY
