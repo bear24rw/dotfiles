@@ -142,11 +142,15 @@ endif
 
 " Keybindings {{{
 
+" clear the ctrl+j binding
+let g:BASH_Ctrl_j = 'off'
+let g:C_Ctrl_j = 'off'
+
 " change leader key to comma
 let mapleader=","
 
 " better split switching
-map <C-j> <C-W>j
+"map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
