@@ -96,6 +96,9 @@ filetype plugin indent on
 " disable auto commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" indent c preprocessors
+set cinkeys=0{,0},0),:,!^F,o,O,e
+
 " }}}
 
 " Tab completion {{{
