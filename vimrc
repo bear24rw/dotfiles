@@ -180,6 +180,9 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 " Toggle paste mode
 nmap <silent> ,p :set invpaste<CR>:set paste?<CR>
 
+" force write with sudo
+cmap w!! w !sudo tee >/dev/null %
+
 " }}}
 
 " Color {{{
