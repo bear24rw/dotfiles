@@ -11,6 +11,10 @@ export GDFONTPATH=/usr/share/fonts/ttf-bitstream-vera
 
 export SDL_AUDIODRIVER=alsa
 
+# syntax highlight as we type
+source ~/.dotfiles/zsh_syntax_highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+
 #{{{ PATH
 
 # add user scripts to path
