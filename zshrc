@@ -95,6 +95,8 @@ alias back='popd'
 
 alias nowrap='cut -c -$COLUMNS'
 
+alias ydl='youtube-dl -t'
+
 #}}}
 
 #{{{ Options
