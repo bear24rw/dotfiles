@@ -13,6 +13,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'tikhomirov/vim-glsl'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'kien/ctrlp.vim'
 
 " re-enable settings that had to be disabled for vundle
 filetype plugin indent on
