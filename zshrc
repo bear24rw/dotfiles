@@ -93,6 +93,8 @@ alias nowrap='cut -c -$COLUMNS'
 
 alias ydl='youtube-dl -t'
 
+alias magic='magic -dOGL -T/home/user/school/vlsi/models/SCN3ME_SUBM.30.tech27'
+
 #}}}
 
 #{{{ Options
