@@ -6,6 +6,8 @@ GREEN="\033[01;32m"
 BLUE="\033[01;34m"
 WHITE="\033[00m"
 
+git clone https://github.com/gmarik/vundle.git vim/bundle/vundle
+
 for name in *; do
     
     # ignore ourself

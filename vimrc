@@ -1,5 +1,4 @@
-call pathogen#incubate()
-call pathogen#helptags()
+source $HOME/.vim/bundles.vim
 
 " General {{{
 
