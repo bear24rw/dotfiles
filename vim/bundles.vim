@@ -11,6 +11,8 @@ Bundle 'godlygeek/tabular'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-markdown'
+Bundle 'tikhomirov/vim-glsl'
+Bundle 'Valloric/YouCompleteMe'
 
 " re-enable settings that had to be disabled for vundle
 filetype plugin indent on
