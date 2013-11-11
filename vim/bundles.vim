@@ -25,6 +25,7 @@ let g:Powerline_symbols = "compatible"
 " Solarized
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
+colorscheme solarized
 
 " Gundo toggle
 nnoremap <F5> :GundoToggle<CR>
@@ -39,3 +40,4 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabLongestEnhanced = 1
 let g:SuperTabLongestHighlight = 1
 
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>

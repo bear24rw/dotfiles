@@ -1,5 +1,3 @@
-source $HOME/.vim/bundles.vim
-
 " General {{{
 
 " Tabs {{{
@@ -182,9 +180,6 @@ set t_Co=256
 " use dark color scheme
 set bg=dark
 
-" some nice color schemes
-colorscheme solarized
-
 " line numbers are grey with black
 highlight LineNr ctermbg=0 ctermfg=235
 
@@ -206,3 +201,5 @@ autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
   \   exe "normal g`\"" |
   \ endif
+
+source $HOME/.vim/bundles.vim
