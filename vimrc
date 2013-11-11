@@ -121,10 +121,6 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabLongestEnhanced = 1
-let g:SuperTabLongestHighlight = 1
-
 "}}}
 
 " Title bar {{{
@@ -167,15 +163,6 @@ command Q q
 " yank from cursor to end of line
 nnoremap Y y$
 
-" Gundo toggle
-nnoremap <F5> :GundoToggle<CR>
-
-" tabular shortcuts
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
-
 " Toggle paste mode
 nmap <silent> ,p :set invpaste<CR>:set paste?<CR>
 
@@ -196,8 +183,6 @@ set t_Co=256
 set bg=dark
 
 " some nice color schemes
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
 colorscheme solarized
 
 " line numbers are grey with black
@@ -205,18 +190,6 @@ highlight LineNr ctermbg=0 ctermfg=235
 
 " current line highlighting
 highlight CursorLine ctermbg=234
-
-" }}}
-
-" Status Line {{{
-
-" powerline plugin needs two lines
-set laststatus=2
-
-" encoding
-set encoding=utf-8
-
-let g:Powerline_symbols = "compatible"
 
 " }}}
 
