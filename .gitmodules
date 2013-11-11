@@ -1,48 +1,6 @@
-[submodule "vim/bundle/indent_guides"]
-	path = vim/bundle/indent_guides
-	url = https://github.com/vim-scripts/Indent-Guides.git
-    ignore = dirty
-[submodule "vim/bundle/vim-colors-solarized"]
-	path = vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/pathogen"]
-	path = vim/pathogen
-	url = https://github.com/tpope/vim-pathogen.git
-[submodule "vim/bundle/tabular"]
-	path = vim/bundle/tabular
-	url = https://github.com/godlygeek/tabular.git
 [submodule "ls_colors"]
 	path = ls_colors
 	url = https://github.com/trapd00r/LS_COLORS.git
-[submodule "vim/bundle/supertab"]
-	path = vim/bundle/supertab
-	url = https://github.com/ervandew/supertab
-[submodule "vim/bundle/matchit"]
-	path = vim/bundle/matchit
-	url = https://github.com/vim-scripts/matchit.zip.git
-    ignore = dirty
-[submodule "vim/bundle/matchtag"]
-	path = vim/bundle/matchtag
-	url = https://github.com/gregsexton/MatchTag
-[submodule "vim/bundle/gundo"]
-	path = vim/bundle/gundo
-	url = https://github.com/sjl/gundo.vim.git
-[submodule "vim/bundle/tcomment"]
-	path = vim/bundle/tcomment
-	url = https://github.com/tomtom/tcomment_vim.git
-[submodule "vim/bundle/powerline"]
-	path = vim/bundle/powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
-[submodule "vim/bundle/vim-markdown"]
-	path = vim/bundle/vim-markdown
-	url = https://github.com/tpope/vim-markdown.git
-[submodule "vim/bundle/vim-bad-whitespace"]
-	path = vim/bundle/vim-bad-whitespace
-	url = https://github.com/bitc/vim-bad-whitespace.git
-    ignore = dirty
 [submodule "zsh_syntax_highlighting"]
 	path = zsh_syntax_highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "vim/bundle/vim-glsl"]
-	path = vim/bundle/vim-glsl
-	url = https://github.com/tikhomirov/vim-glsl
