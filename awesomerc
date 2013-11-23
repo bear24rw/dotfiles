@@ -281,18 +281,22 @@ clientkeys = awful.util.table.join(
         function (c)
             local curidx = awful.tag.getidx(c:tags()[1])
             if curidx == 1 then
-                c:tags({screen[mouse.screen]:tags()[9]})
+                local tag = awful.tag.gettags(client.focus.screen)[9]
+                awful.client.movetotag(tag)
             else
-                c:tags({screen[mouse.screen]:tags()[curidx - 1]})
+                local tag = awful.tag.gettags(client.focus.screen)[curidx-1]
+                awful.client.movetotag(tag)
             end
         end),
     awful.key({ modkey, "Shift"   }, "Right",
         function (c)
             local curidx = awful.tag.getidx(c:tags()[1])
             if curidx == 9 then
-                c:tags({screen[mouse.screen]:tags()[1]})
+                local tag = awful.tag.gettags(client.focus.screen)[1]
+                awful.client.movetotag(tag)
             else
-                c:tags({screen[mouse.screen]:tags()[curidx + 1]})
+                local tag = awful.tag.gettags(client.focus.screen)[curidx+1]
+                awful.client.movetotag(tag)
             end
         end)
 )
