@@ -71,7 +71,7 @@ alias ssh_desktop='ssh user@192.168.1.137 -p44'
 
 alias mount_server='sshfs -p69 -o reconnect -o follow_symlinks pwner@durknation.gotdns.com:/ ~/mnt/server'
 alias mount_home='sshfs -p44 -o reconnect -o follow_symlinks user@bear24rw.gotdns.com:/ ~/mnt/backup'
-alias mount_desktop='sshfs -p44 -o reconnect -o follow_symlinks user@192.168.1.137:/ ~/mnt/desktop'
+alias mount_desktop='sshfs -p44 -o reconnect -o follow_symlinks,noappledouble,nolocalcaches user@192.168.1.137.com:/ ~/mnt/desktop'
 alias mount_ucfilespace='sshfs -o reconnect -o follow_symlinks thrunml@ucfilespace.uc.edu:/Network/Servers/ucfilespace.uc.edu/Home/t/thrunml/ ~/mnt/ucfilespace'
 alias mount_uceng='sshfs -o reconnect -o follow_symlinks thrunml@virtulab.ceas1.uc.edu:/home/thrunml/ ~/mnt/uceng'
 
