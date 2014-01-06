@@ -1,0 +1,7 @@
+[color]
+	ui = true
+[user]
+	name = Max Thrun
+	email = bear24rw@gmail.com
+[push]
+	default = simple

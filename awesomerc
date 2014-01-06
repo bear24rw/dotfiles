@@ -111,20 +111,13 @@ mytaglist.buttons = awful.util.table.join(
 mytasklist = {}
 mytasklist.buttons = awful.util.table.join(
                      awful.button({ }, 1, function (c)
-                                              if c == client.focus then
-                                                  c.minimized = true
-                                              else
-                                                  -- Without this, the following
-                                                  -- :isvisible() makes no sense
-                                                  c.minimized = false
-                                                  if not c:isvisible() then
-                                                      awful.tag.viewonly(c:tags()[1])
-                                                  end
-                                                  -- This will also un-minimize
-                                                  -- the client, if needed
-                                                  client.focus = c
-                                                  c:raise()
+                                              if not c:isvisible() then
+                                                  awful.tag.viewonly(c:tags()[1])
                                               end
+                                              -- This will also un-minimize
+                                              -- the client, if needed
+                                              client.focus = c
+                                              c:raise()
                                           end),
                      awful.button({ }, 3, function ()
                                               if instance then
@@ -288,18 +281,22 @@ clientkeys = awful.util.table.join(
         function (c)
             local curidx = awful.tag.getidx(c:tags()[1])
             if curidx == 1 then
-                c:tags({screen[mouse.screen]:tags()[9]})
+                local tag = awful.tag.gettags(client.focus.screen)[9]
+                awful.client.movetotag(tag)
             else
-                c:tags({screen[mouse.screen]:tags()[curidx - 1]})
+                local tag = awful.tag.gettags(client.focus.screen)[curidx-1]
+                awful.client.movetotag(tag)
             end
         end),
     awful.key({ modkey, "Shift"   }, "Right",
         function (c)
             local curidx = awful.tag.getidx(c:tags()[1])
             if curidx == 9 then
-                c:tags({screen[mouse.screen]:tags()[1]})
+                local tag = awful.tag.gettags(client.focus.screen)[1]
+                awful.client.movetotag(tag)
             else
-                c:tags({screen[mouse.screen]:tags()[curidx + 1]})
+                local tag = awful.tag.gettags(client.focus.screen)[curidx+1]
+                awful.client.movetotag(tag)
             end
         end)
 )
