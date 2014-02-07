@@ -39,3 +39,7 @@ nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" CtrlP (only show Buffers + Files)
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_mruf_max = 0
