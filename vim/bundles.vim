@@ -15,6 +15,7 @@ Bundle 'tikhomirov/vim-glsl'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'wellle/targets.vim'
+Bundle 'rhysd/vim-clang-format'
 
 " re-enable settings that had to be disabled for vundle
 filetype plugin indent on
@@ -43,3 +44,6 @@ nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " CtrlP (only show Buffers + Files)
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_mruf_max = 0
+
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
