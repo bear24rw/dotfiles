@@ -56,4 +56,5 @@ let g:clang_format#style_options = {
     \ "IndentWidth": 4,
     \ "DerivePointerBinding": "false",
     \ "AlwaysBreakBeforeMultilineStrings": "false",
+    \ "PenaltyBreakBeforeFirstCallParameter": 10000,
     \ "PointerBindsToType": "false"}
