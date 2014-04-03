@@ -16,6 +16,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'wellle/targets.vim'
 Bundle 'rhysd/vim-clang-format'
+Bundle 'bear24rw/vim-llvm-syntax'
 
 " re-enable settings that had to be disabled for vundle
 filetype plugin indent on
@@ -47,3 +48,12 @@ let g:ctrlp_mruf_max = 0
 
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+let g:clang_format#style_options = {
+    \ "BasedOnStyle": "Google",
+    \ "AlignEscapedNewlinesLeft": "false",
+    \ "BinPackParameters": "false",
+    \ "BreakBeforeBraces": "Linux",
+    \ "IndentWidth": 4,
+    \ "DerivePointerBinding": "false",
+    \ "AlwaysBreakBeforeMultilineStrings": "false",
+    \ "PointerBindsToType": "false"}
