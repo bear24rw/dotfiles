@@ -1,8 +1,6 @@
 autoload zmv
 autoload -U colors &&  colors
 
-eval $( gdircolors -b $HOME/.ls_colors/LS_COLORS )
-
 export PYTHONSTARTUP="$HOME/.pythonrc"
 
 export MANPAGER="vimmanpager"
@@ -226,3 +224,5 @@ precmd() { vcs_info; title_path; }
 preexec() { title_job $1; }
 
 PROMPT='%B%(!.%F{red}.%F{green})%n@%m %B%F{blue}%~ ${vcs_info_msg_0_}%F{blue}%# %b%f%k'
+
+eval $( gdircolors -b $HOME/.ls_colors/LS_COLORS )
