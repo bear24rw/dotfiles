@@ -1,8 +1,6 @@
 autoload zmv
 autoload -U colors &&  colors
 
-PATH="/opt/local/bin:/opt/local/sbin:${PATH}"
-
 eval $( gdircolors -b $HOME/.ls_colors/LS_COLORS )
 
 export PYTHONSTARTUP="$HOME/.pythonrc"
@@ -14,6 +12,9 @@ export GDFONTPATH=/usr/share/fonts/ttf-bitstream-vera
 export SDL_AUDIODRIVER=alsa
 
 #{{{ PATH
+
+# macports
+PATH="/opt/local/bin:/opt/local/sbin:${PATH}"
 
 # add user scripts to path
 PATH="${HOME}/.scripts:${PATH}:"
@@ -32,6 +33,9 @@ PATH="/media/other/opt/altera/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin:${PATH}:"
 PATH="/media/other/opt/altera/nios2eds/sdk2/bin/:${PATH}:"
 PATH="/media/other/opt/altera/nios2eds/bin/:${PATH}:"
 PATH="/media/other/opt/altera/nios2eds/:${PATH}:"
+
+# clang-format
+PATH="${PATH}:/Users/user/compiled/clang+llvm-3.4-x86_64-apple-darwin10.9/bin:"
 
 #}}}
 
