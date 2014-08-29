@@ -9,10 +9,13 @@ export GDFONTPATH=/usr/share/fonts/ttf-bitstream-vera
 
 export SDL_AUDIODRIVER=alsa
 
+# homebrew
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 #{{{ PATH
 
-# macports
-PATH="/opt/local/bin:/opt/local/sbin:${PATH}"
+# homebrew
+PATH="/usr/local/bin:${PATH}:"
 
 # add user scripts to path
 PATH="${HOME}/.scripts:${PATH}:"
@@ -25,15 +28,8 @@ PATH="${PATH}:/sbin:/usr/sbin:"
 
 PATH="${HOME}/eagle-5.10.0/bin:${PATH}:"
 
-# altera
-PATH="/opt/altera/quartus/bin:${PATH}:"
-PATH="/media/other/opt/altera/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin:${PATH}:"
-PATH="/media/other/opt/altera/nios2eds/sdk2/bin/:${PATH}:"
-PATH="/media/other/opt/altera/nios2eds/bin/:${PATH}:"
-PATH="/media/other/opt/altera/nios2eds/:${PATH}:"
-
-# clang-format
-PATH="${PATH}:/Users/user/compiled/clang+llvm-3.4-x86_64-apple-darwin10.9/bin:"
+# clang+llvm
+PATH="${PATH}:/Users/user/compiled/llvm_svn/clang/Release+Asserts/bin:"
 
 #}}}
 
@@ -65,10 +61,10 @@ setopt COMPLETE_IN_WORD
 
 alias ssh_server='ssh pwner@durknation.gotdns.com -p69'
 alias ssh_router='ssh admin@router'
-alias ssh_home='ssh user@bear24rw.gotdns.com -p 44'
+alias ssh_home='ssh user@bear24rw.pw -p 44'
 alias ssh_ucfilespace='ssh thrunml@ucfilespace.uc.edu'
 alias ssh_uceng='ssh thrunml@virtulab.ceas1.uc.edu '
-alias ssh_tv='ssh media@durknation.gotdns.com -p337'
+alias ssh_tv='ssh media@192.168.1.111'
 alias ssh_desktop='ssh user@192.168.1.137 -p44'
 
 alias mount_server='sshfs -p69 -o reconnect -o follow_symlinks pwner@durknation.gotdns.com:/ ~/mnt/server'
