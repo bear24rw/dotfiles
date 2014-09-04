@@ -219,4 +219,8 @@ precmd() { vcs_info; title_path; }
 
 preexec() { title_job $1; }
 
-PROMPT='%B%(!.%F{red}.%F{green})%n@%m %B%F{blue}%~ ${vcs_info_msg_0_}%F{blue}%# %b%f%k'
+if [[ -z $SSH_TTY ]]; then
+    PROMPT='%B%(!.%F{red}.%F{green})%n@%m %B%F{blue}%~ ${vcs_info_msg_0_}%F{blue}%# %b%f%k'
+else
+    PROMPT='%B%(!.%F{red}.%F{cyan})%n@%m %B%F{blue}%~ ${vcs_info_msg_0_}%F{blue}%# %b%f%k'
+fi
