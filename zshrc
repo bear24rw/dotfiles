@@ -76,7 +76,7 @@ alias mount_uceng='sshfs -o reconnect -o follow_symlinks thrunml@virtulab.ceas1.
 alias ls='ls --group-directories-first --color=auto -X -h --classify'
 alias ll='ls -l'
 alias lla='ll -a'
-alias rrsync='rsync -avz --stats --progress'
+alias rrsync='rsync -av --stats --progress'
 alias grep='grep --color'
 alias egrep='egrep --color'
 alias df='df -h'
@@ -137,6 +137,7 @@ bindkey '' vi-forward-word
 bindkey '' vi-backward-word
 bindkey '' vi-backward-char
 bindkey '' vi-forward-char
+bindkey '' history-incremental-pattern-search-backward
 
 # control+j is hard mapped to line feed?
 #bindkey ' ' down-history
