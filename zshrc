@@ -110,6 +110,9 @@ setopt PUSHD_SILENT
 # regex like globbing: cp ^*.(tar|bz2|gz)
 setopt EXTENDED_GLOB
 
+# dont error if glob cant be expanded
+unsetopt nomatch
+
 # don't beep
 setopt NO_BEEP
 
